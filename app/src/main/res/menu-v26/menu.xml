@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/back_menu"
+        android:id="@+id/back"
         android:icon="@drawable/ic_baseline_arrow_back_24"
         android:iconTint="@color/black"
         android:title="뒤로가기"
