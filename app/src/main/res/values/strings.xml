@@ -4,6 +4,7 @@
     <string name="sign_up">Sign up</string>
     <string name="sign_in">Sign in</string>
     <string name="password">password</string>
+    <string name="back">back</string>
 
     <string-array name="grade">
 
