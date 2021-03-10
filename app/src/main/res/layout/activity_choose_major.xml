@@ -2,20 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp">
 
 
     <LinearLayout
@@ -23,6 +14,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="자신의 전공 혹은 관심있는 분야를 선택해 주세요"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
         <GridLayout
             android:layout_width="match_parent"
@@ -49,8 +48,8 @@
 
                     <FrameLayout
                         android:layout_width="fill_parent"
-                        android:background="@drawable/android_oreo"
-                        android:layout_height="fill_parent">
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/android_oreo">
 
 
                         <ImageView
@@ -119,7 +118,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="Ios"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -169,7 +168,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="Web FrontEnd"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -219,7 +218,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="Web BackEnd"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -269,7 +268,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="정보 보안"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -319,7 +318,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="인공지능"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -369,7 +368,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="게임 개발"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -419,7 +418,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="네트 워크"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -469,7 +468,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="클라우드"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -519,11 +518,45 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="Iot"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
 
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginTop="30dp"
+                                android:text="로보틱스"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="SmallSp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginTop="30dp"
+                                android:text="선택 안함"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="SmallSp" />
 
                         </LinearLayout>
 
