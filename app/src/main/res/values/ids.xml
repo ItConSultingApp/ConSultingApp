@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="sign_up_name" type="id" />
+    <item name="sign_up_id" type="id" />
+    <item name="sign_up_id_password" type="id" />
+    <item name="sign_up_id_check" type="id" />
+    <item name="sign_up_password_overlap" type="id" />
+    <item name="textView3" type="id" />
+    <item name="sign_up_grade" type="id" />
+    <item name="sign_up_grade_class" type="id" />
+    <item name="sign_up_class_number" type="id" />
+    <item name="sign_up_major" type="id" />
+    <item name="sign_up_btn" type="id" />
+    <item name="textInputLayout" type="id" />
+</resources>

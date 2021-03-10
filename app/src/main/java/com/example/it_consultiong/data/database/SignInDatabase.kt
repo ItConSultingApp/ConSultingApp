@@ -11,7 +11,7 @@ import kotlinx.coroutines.InternalCoroutinesApi
 
 @Database(entities = [SignInData::class], version = 1, exportSchema = false)
 
-abstract class SignInDatabase : RoomDatabase() {
+abstract class    SignInDatabase : RoomDatabase() {
 
     abstract fun signInDao(): SignInDao
 
