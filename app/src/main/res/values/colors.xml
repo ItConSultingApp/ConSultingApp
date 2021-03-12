@@ -12,4 +12,5 @@
     <color name="red">#DB4455</color>
     <color name="gray">#808080</color>
     <color name="yellow">#ffff00</color>
+    <color name="login_txt">#ffffff</color>
 </resources>
