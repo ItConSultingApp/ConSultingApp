@@ -6,8 +6,7 @@ import com.example.it_consultiong.data.models.SignUpData
 
 
 class SignUpRepository(private val signUpDao: SignUpDao) {
-    val getAllData: LiveData<List<SignUpData>> = signUpDao.getAllData()
-    val getSignUpData: LiveData<List<SignUpData>> = signUpDao.getAllData()
+    val getAllData: Array<SignUpData> = signUpDao.getAllData("","")
 
     suspend fun insertData(signUpData: SignUpData) {
         signUpDao.insertData(signUpData)

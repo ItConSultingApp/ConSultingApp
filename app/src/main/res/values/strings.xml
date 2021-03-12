@@ -5,6 +5,7 @@
     <string name="sign_in">Sign in</string>
     <string name="password">password</string>
     <string name="back">back</string>
+    <string name="cotion" />
 
     <string-array name="grade">
 
