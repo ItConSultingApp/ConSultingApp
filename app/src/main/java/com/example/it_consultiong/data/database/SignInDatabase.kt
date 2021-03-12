@@ -44,6 +44,7 @@ abstract class    SignInDatabase : RoomDatabase() {
                 // 스레드는 synchronized 메소드에 들어가기 위해 lock 을 얻고 메소드가 끝이나면 lock 을 반환
                 INSTANCE = instance
                 return instance
+                //test
 
             }
 
