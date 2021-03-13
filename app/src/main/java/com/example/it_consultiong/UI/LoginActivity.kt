@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.it_consultiong.data.viewmodel.ObjectClass
+
 import com.example.it_consultiong.databinding.ActivityLoginBinding
 import kotlinx.coroutines.InternalCoroutinesApi
 
