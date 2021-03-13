@@ -1,4 +1,4 @@
-package com.example.it_consultiong.data.viewmodel
+package com.example.it_consultiong.mvvm.viewmodel
 
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
