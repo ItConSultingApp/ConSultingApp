@@ -9,13 +9,11 @@ import androidx.room.PrimaryKey
 data class SignUpData(
         @PrimaryKey(autoGenerate = true)
         @Ignore var id: String,
-        @ColumnInfo(name = "db_id") var signId: String,
-        @ColumnInfo(name = "db_pwd") var signpwd: String,
+        var signId: String,
+        var signpwd: String,
         var signName: String,
         var signGrade: String,
         var signclass: String,
         var signclassnumber: String,
-        var signmajor: String
 
-
-)
+        )
