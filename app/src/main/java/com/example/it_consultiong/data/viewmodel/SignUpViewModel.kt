@@ -5,8 +5,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.it_consultiong.data.SignUpDatabase
-import com.example.it_consultiong.data.models.SignUpData
-import com.example.it_consultiong.data.repository.SignUpRepository
+import com.example.it_consultiong.mvvm.models.SignUpData
+import com.example.it_consultiong.mvvm.repository.SignUpRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.launch

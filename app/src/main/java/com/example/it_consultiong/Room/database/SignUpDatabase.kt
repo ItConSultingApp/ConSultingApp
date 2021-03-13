@@ -4,9 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import com.example.it_consultiong.Dao.SignUpDao
-import com.example.it_consultiong.data.models.SignUpData
+import com.example.it_consultiong.mvvm.models.SignUpData
 import kotlinx.coroutines.InternalCoroutinesApi
 
 @Database(entities = [SignUpData::class], version = 2, exportSchema = false)
