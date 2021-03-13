@@ -1,0 +1,70 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "73405594f2bdf48f4210d4159ba29382",
+    "entities": [
+      {
+        "tableName": "sign_up",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `signName` TEXT NOT NULL, `signId` TEXT NOT NULL, `signPwd` TEXT NOT NULL, `signGrade` TEXT NOT NULL, `signclass` TEXT NOT NULL, `signclassnumber` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "signName",
+            "columnName": "signName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "signId",
+            "columnName": "signId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "signPwd",
+            "columnName": "signPwd",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "signGrade",
+            "columnName": "signGrade",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "signclass",
+            "columnName": "signclass",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "signclassnumber",
+            "columnName": "signclassnumber",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '73405594f2bdf48f4210d4159ba29382')"
+    ]
+  }
+}

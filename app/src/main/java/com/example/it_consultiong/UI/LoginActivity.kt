@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.it_consultiong.UI.SignUpActivity
 import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
 
 import com.example.it_consultiong.databinding.ActivityLoginBinding
