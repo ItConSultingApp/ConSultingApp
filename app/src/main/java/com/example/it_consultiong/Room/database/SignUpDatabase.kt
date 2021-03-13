@@ -9,8 +9,7 @@ import com.example.it_consultiong.Dao.SignUpDao
 import com.example.it_consultiong.data.models.SignUpData
 import kotlinx.coroutines.InternalCoroutinesApi
 
-@Database(entities = [SignUpData::class], version = 1, exportSchema = false)
-@TypeConverters(Converter::class)
+@Database(entities = [SignUpData::class], version = 2, exportSchema = false)
 abstract class SignUpDatabase : RoomDatabase() {
 
     abstract fun signUpDao(): SignUpDao
@@ -37,7 +36,7 @@ abstract class SignUpDatabase : RoomDatabase() {
                     context.applicationContext,
                     SignUpDatabase::class.java,
                     "sign_up"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
 
                 // 다른 쓰레드에 권한을 못줌
                 // thread 를 동기화 하기 위해서 제공
