@@ -9,8 +9,8 @@ import com.google.firebase.firestore.auth.User
 interface SignUpDao {
 
 
-    @Query("SELECT * FROM sign_up  ")
-    fun getAllData(signId: String, signPwd:String): Array<SignUpData>
+    @Query("SELECT * FROM sign_up")
+    fun getAllData(): LiveData<List<SignUpData>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE) // PrimaryKey 가 겹치면 무시한다.
     suspend fun insertData(signupData: SignUpData)
