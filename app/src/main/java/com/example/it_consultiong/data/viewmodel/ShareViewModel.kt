@@ -4,7 +4,7 @@ import android.app.Application
 import android.text.TextUtils
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.it_consultiong.data.models.SignUpData
+import com.example.it_consultiong.mvvm.models.SignUpData
 
 class ShareViewModel(application: Application) : AndroidViewModel(application) {
 
