@@ -2,8 +2,7 @@ package com.example.it_consultiong.Dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.it_consultiong.data.models.SignUpData
-import com.google.firebase.firestore.auth.User
+import com.example.it_consultiong.mvvm.models.SignUpData
 
 @Dao
 interface SignUpDao {
