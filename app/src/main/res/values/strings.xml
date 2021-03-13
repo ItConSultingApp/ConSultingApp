@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">It_Consultiong</string>
-    <string name="forgot_password">forgot password?</string>
-    <string name="sign_up">Sign up</string>
-    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">비밀번호를 잊어버리셨나요?</string>
+    <string name="sign_up">회원가입 하기</string>
+    <string name="sign_in">이메일 로그인하기</string>
     <string name="password">password</string>
     <string name="back">back</string>
+
     <string name="cotion" />
+
+    <string name="app_login_introduction">선배들과 함께하는</string>
+
+
 
     <string-array name="grade">
 

@@ -5,17 +5,17 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.it_consultiong.UI.SignUpActivity
+import com.example.it_consultiong.databinding.ActivityLoginMainBinding
 import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
 
-import com.example.it_consultiong.databinding.ActivityLoginBinding
 import kotlinx.coroutines.InternalCoroutinesApi
 
 @InternalCoroutinesApi
-class LoginActivity() : AppCompatActivity() {
+class LoginMainActivity() : AppCompatActivity() {
 
 
     private val TAG = "LoginActivity"
-    private val binding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
+    private val binding by lazy { ActivityLoginMainBinding.inflate(layoutInflater) }
 
     val objectClass = ObjectClass()
 
@@ -32,9 +32,7 @@ class LoginActivity() : AppCompatActivity() {
         }
     }
 
-    fun SignInLogin() {
 
-    }
 
 
 }

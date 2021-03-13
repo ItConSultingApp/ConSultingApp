@@ -8,7 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.it_consultiong.LoginActivity
+import com.example.it_consultiong.LoginMainActivity
 import com.example.it_consultiong.R
 import com.example.it_consultiong.mvvm.models.SignUpData
 import com.example.it_consultiong.data.data_model.signUp
@@ -62,7 +62,7 @@ class SignUpActivity : AppCompatActivity() {
 
 
     private fun backSignUp() {
-        val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, LoginMainActivity::class.java)
         startActivity(intent)
         finish()
     }
