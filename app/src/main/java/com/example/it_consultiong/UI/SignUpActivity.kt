@@ -3,22 +3,22 @@ package com.example.it_consultiong.UI
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toolbar
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.it_consultiong.LoginMainActivity
 import com.example.it_consultiong.R
-import com.example.it_consultiong.mvvm.models.SignUpData
 import com.example.it_consultiong.data.data_model.signUp
+import com.example.it_consultiong.databinding.ActivitySignUpBinding
+import com.example.it_consultiong.mvvm.models.SignUpData
 import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
 import com.example.it_consultiong.mvvm.viewmodel.ShareViewModel
 import com.example.it_consultiong.mvvm.viewmodel.SignUpViewModel
-import com.example.it_consultiong.databinding.ActivitySignUpBinding
 import kotlinx.coroutines.InternalCoroutinesApi
 
 
+@Suppress("UNREACHABLE_CODE")
 @InternalCoroutinesApi
 class SignUpActivity : AppCompatActivity() {
 
@@ -29,96 +29,104 @@ class SignUpActivity : AppCompatActivity() {
     private val mSignUpViewModel: SignUpViewModel by viewModels()
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.upToolBar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.title = "회원가입"
 
 
         mSignUpViewModel.getAllData.observe(this, androidx.lifecycle.Observer { data ->
             mSharedViewModel.checkIfDatabaseEmpty(data)
         })
 
-    }
+        binding.signUpBtn.setOnClickListener {
+            insertDataToDb()
 
 
-    //실행이 안됌
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        Log.d(TAG, "onCreateOptionsMenu: ")
-        val inflater = MenuInflater(this)
-        inflater.inflate(R.menu.back_menu, menu)
-        super.onCreateOptionsMenu(menu)
-        return true
+        }
 
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.back) {
-            backSignUp()
+
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
 
 
-    private fun backSignUp() {
-        val intent = Intent(this, LoginMainActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-
-    fun SignUp() {
-
-        insertDataToDb()
-
-    }
-
     private fun insertDataToDb() {
 
-         val signUpId = binding.signUpEditId.text.toString()
-         val signUPwd = binding.signUpPassword.text.toString()
-         val signUpGrade = binding.signUpGrade.selectedItem.toString()
-         val signUpClassNumber = binding.signUpClassNumber.selectedItem.toString()
-         val signUpGradeClass = binding.signUpGradeClass.selectedItem.toString()
-         val signUpName = binding.signUpName.text.toString()
+        val signUpId = binding.signUpEditId.text.toString()
+        val signUPwd = binding.signUpPassword.text.toString()
+        val signUpGrade = binding.signUpGrade.selectedItem.toString()
+        val signUpClassNumber = binding.signUpClassNumber.selectedItem.toString()
+        val signUpGradeClass = binding.signUpGradeClass.selectedItem.toString()
+        val signUpName = binding.signUpName.text.toString()
+        val signUpMajor = binding.signUpMajor.text.toString()
+        val signUpPwdCheck = binding.signUpCheckPassword.text.toString()
 
-        val signUpData = signUp(signUpName, signUpId, signUPwd, signUpGrade, signUpGradeClass, signUpClassNumber)
+        val signUpData =
+            signUp(signUpName, signUpId, signUPwd, signUpGrade, signUpGradeClass, signUpClassNumber)
 
 
         val validation = mSharedViewModel.verifyDtaFromUser(
+            signUpData.signUpName,
+            signUpData.signUpId,
+            signUpData.signUpPwd,
+            signUpData.SignUpGrade,
+            signUpData.SignUpClass,
+            signUpData.SignUpClassNumber,
+            signUpMajor
+
+
+        )
+        if (validation && signUpPwdCheck == signUPwd) {
+
+            val signedData = SignUpData(
+                1,
                 signUpData.signUpName,
                 signUpData.signUpId,
                 signUpData.signUpPwd,
                 signUpData.SignUpGrade,
                 signUpData.SignUpClass,
                 signUpData.SignUpClassNumber
-
-
-        )
-        if (validation) {
-
-            val signedData = SignUpData(
-                    1,
-                    signUpData.signUpName,
-                    signUpData.signUpId,
-                    signUpData.signUpPwd,
-                    signUpData.SignUpGrade,
-                    signUpData.SignUpClass,
-                    signUpData.SignUpClassNumber
             )
 
-            objectClass.showToast("$signedData")
+
             mSignUpViewModel.insertData(signedData)
+
 
             Log.d(TAG, "insertDataToDb: $signedData")
 
+            intent.putExtra("id", signUpData.signUpId)
+            intent.putExtra("pwd", signUpData.signUpPwd)
 
+            Log.d(TAG, "id: ${signUpData.signUpId}\t pwd : ${signUpData.signUpPwd}")
+
+            objectClass.showToast(this, "회원가입 완료")
+
+            val intent = Intent(this, LoginMainActivity::class.java)
+            startActivity(intent)
+
+        } else if (validation && signUpPwdCheck != signUPwd) {
+            objectClass.showToast(this, "비밀번호를 확인해 주세요")
+
+        } else {
+            objectClass.showToast(this, "빈칸을 채워주세요!")
         }
 
 
     }
+
 }
 
 
