@@ -55,7 +55,6 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/login_sign_up_btn"
             android:fontFamily="@font/tmoneyroundwindextrabold"
-            android:onClick="SignInLogin"
             android:text="@string/sign_in"
             android:textColor="@color/login_txt"
             android:textSize="15dp" />
