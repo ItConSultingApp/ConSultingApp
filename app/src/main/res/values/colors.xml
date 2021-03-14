@@ -13,4 +13,5 @@
     <color name="gray">#808080</color>
     <color name="yellow">#ffff00</color>
     <color name="login_txt">#ffffff</color>
+    <color name="login_edittext_bottombar">#ffffff</color>
 </resources>

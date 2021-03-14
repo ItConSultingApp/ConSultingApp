@@ -36,6 +36,7 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
         mSignUpViewModel.getAllData.observe(this, androidx.lifecycle.Observer { data ->
             mSharedViewModel.checkIfDatabaseEmpty(data)
         })
@@ -76,8 +77,8 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun insertDataToDb() {
 
-         val signUpId = binding.signUpId.text.toString()
-         val signUPwd = binding.signUpIdPassword.text.toString()
+         val signUpId = binding.signUpEditId.text.toString()
+         val signUPwd = binding.signUpPassword.text.toString()
          val signUpGrade = binding.signUpGrade.selectedItem.toString()
          val signUpClassNumber = binding.signUpClassNumber.selectedItem.toString()
          val signUpGradeClass = binding.signUpGradeClass.selectedItem.toString()

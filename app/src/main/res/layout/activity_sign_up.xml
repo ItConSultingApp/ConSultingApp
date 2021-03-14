@@ -1,165 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@drawable/login_background"
     android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/sign_up_id"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_id"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sign_up_name"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:background="@color/white"
-            android:hint="name"
-            android:textColorHint="@color/blue" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/sign_up_id"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:hint="id"
-        android:inputType="text"
-        android:singleLine="true"
-        android:textColorHint="@color/gray"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="@+id/sign_up_password_overlap"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_password_overlap"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <EditText
-        android:id="@+id/sign_up_id_password"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:hint="password"
-        android:inputType="textPassword"
-        android:singleLine="true"
-        android:textColorHint="@color/gray"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sign_up_grade_class"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_grade"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_id"
-        app:layout_constraintVertical_bias="0.127"
-        tools:ignore="TextFields" />
-
-    <EditText
-        android:id="@+id/sign_up_password_overlap"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="96dp"
-        android:hint="비밀번호 확인"
-        android:inputType="textPassword"
-        android:singleLine="true"
-        android:textColorHint="@color/gray"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/sign_up_id_password"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_id_password"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_id"
-        app:layout_constraintVertical_bias="0.234"
-        tools:ignore="TextFields" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="학년 반 이름"
-        android:textColor="@color/blue"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_password_overlap"
-        app:layout_constraintVertical_bias="0.062" />
-
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/sign_up_grade"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="10dp"
-        android:entries="@array/grade"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.075" />
-
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/sign_up_grade_class"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:entries="@array/grad_class"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toEndOf="@+id/sign_up_grade"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.075" />
-
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/sign_up_class_number"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:entries="@array/class_number"
-        app:layout_constraintBottom_toBottomOf="@+id/sign_up_grade_class"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toEndOf="@+id/sign_up_grade_class"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-    <EditText
-        android:id="@+id/sign_up_major"
+    <LinearLayout
+        android:id="@+id/sign_up_info"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:gravity="left"
-        android:hint="나의 전공은?"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        >
+<!--        아이디-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_id"
+            android:layout_width="200dp"
+            app:errorEnabled="true"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_up_edit_id"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:background="#00000000"
+                android:textColorHint="#ffffff" />
 
-        android:paddingRight="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/sign_up_class_number"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_grade"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_grade_class" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        비밀번호-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_password"
+            android:layout_width="200dp"
+            app:errorEnabled="true"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_up_password"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:background="#00000000"
+                android:textColorHint="#ffffff" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        비밀번호확인-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_check_password"
+            android:layout_width="200dp"
+            app:errorEnabled="true"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_up_check_password"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:background="#00000000"
+                android:textColorHint="#ffffff" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        학번-->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="학년 반 이름"
+            android:textColor="#000000"
+            android:textStyle="bold"
+ />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sign_up_grade"
+                android:layout_width="100dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:entries="@array/grade"
+                />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sign_up_grade_class"
+                android:layout_width="100dp"
+                android:layout_weight="1"
+
+                android:layout_height="wrap_content"
+                android:entries="@array/grad_class"
+                />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sign_up_class_number"
+                android:layout_width="100dp"
+                android:layout_weight="1"
+
+                android:layout_height="wrap_content"
+                android:entries="@array/class_number"
+                />
+        </LinearLayout>
+
+<!--        이름-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_up_name"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:textColorHint="#ffffff" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--  나의 전공은?-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_major"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_up_major"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:textColorHint="#ffffff" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sign_up_btn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/sign_up_button"
+        android:layout_below="@+id/sign_up_info"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/login_sign_up_btn"
         android:onClick="SignUp"
-        android:text="회원 가입"
+        android:text="회원 가입" />
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_major"
-        app:layout_constraintVertical_bias="0.203" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
