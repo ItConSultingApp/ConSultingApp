@@ -1,10 +1,9 @@
-package com.example.it_consultiong
+package com.example.it_consultiong.UI
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.it_consultiong.UI.SignUpActivity
 import com.example.it_consultiong.databinding.ActivityLoginMainBinding
 import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
 
@@ -28,7 +27,12 @@ class LoginMainActivity() : AppCompatActivity() {
             Log.d(TAG, "LoginActivity - signUp() called")
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
-            finish()
+
+        }
+
+        binding.signIn.setOnClickListener{
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
         }
     }
 
