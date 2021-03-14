@@ -3,122 +3,138 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/login_background"
     android:layout_height="match_parent">
 
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/upToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/Theme.Design.Light.NoActionBar"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
     <LinearLayout
         android:id="@+id/sign_up_info"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_centerInParent="true"
-        >
-<!--        아이디-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout_id"
-            android:layout_width="200dp"
-            app:errorEnabled="true"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/sign_up_edit_id"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:background="#00000000"
-                android:textColorHint="#ffffff" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-<!--        비밀번호-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout_password"
-            android:layout_width="200dp"
-            app:errorEnabled="true"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/sign_up_password"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:background="#00000000"
-                android:textColorHint="#ffffff" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-<!--        비밀번호확인-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout_check_password"
-            android:layout_width="200dp"
-            app:errorEnabled="true"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/sign_up_check_password"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:background="#00000000"
-                android:textColorHint="#ffffff" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-<!--        학번-->
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="학년 반 이름"
-            android:textColor="#000000"
-            android:textStyle="bold"
- />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/sign_up_grade"
-                android:layout_width="100dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:entries="@array/grade"
-                />
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/sign_up_grade_class"
-                android:layout_width="100dp"
-                android:layout_weight="1"
-
-                android:layout_height="wrap_content"
-                android:entries="@array/grad_class"
-                />
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/sign_up_class_number"
-                android:layout_width="100dp"
-                android:layout_weight="1"
-
-                android:layout_height="wrap_content"
-                android:entries="@array/class_number"
-                />
-        </LinearLayout>
-
-<!--        이름-->
+        android:gravity="center"
+        android:orientation="vertical">
+        <!--        이름-->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="200dp"
             android:layout_height="wrap_content">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/sign_up_name"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:hint="Name"
                 android:background="#00000000"
                 android:textColorHint="#ffffff" />
+            <!--        아이디-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_id"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sign_up_edit_id"
+                    android:layout_width="200dp"
+                    android:hint="id"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#ffffff" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        비밀번호-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_password"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sign_up_password"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="pwd"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#ffffff" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        비밀번호확인-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_check_password"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sign_up_check_password"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="pwdCheck"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#ffffff" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        학번-->
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="학년 반 이름"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sign_up_grade"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/grade" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sign_up_grade_class"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:entries="@array/grad_class" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sign_up_class_number"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:entries="@array/class_number" />
+            </LinearLayout>
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -128,10 +144,12 @@
             android:id="@+id/textInputLayout_major"
             android:layout_width="200dp"
             android:layout_height="wrap_content">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/sign_up_major"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:hint="나의 전공은?"
                 android:background="#00000000"
                 android:textColorHint="#ffffff" />
 
