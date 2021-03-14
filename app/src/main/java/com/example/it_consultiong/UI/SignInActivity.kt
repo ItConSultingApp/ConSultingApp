@@ -11,6 +11,7 @@ import com.example.it_consultiong.MajorChooseActivity
 import com.example.it_consultiong.Room.room_models.SignUpData
 import com.example.it_consultiong.data.data_model.signUp
 import com.example.it_consultiong.databinding.ActivityEmailSignInBinding
+import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
 import com.example.it_consultiong.mvvm.viewmodel.ShareViewModel
 
 
@@ -18,7 +19,7 @@ class SignInActivity : AppCompatActivity() {
     lateinit var binding: ActivityEmailSignInBinding
 
     private val mSharedViewModel: ShareViewModel by viewModels()
-
+    private val objectClass = ObjectClass()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEmailSignInBinding.inflate(layoutInflater)
@@ -49,24 +50,32 @@ class SignInActivity : AppCompatActivity() {
 
 
     fun signIn() {
-        val id = binding.signInId.toString()
-        val pwd = binding.signInPwd.toString()
+        // editText id값
+        val id = binding.signInId.text.toString()
+        // editText pwd 값
+        val pwd = binding.signInPwd.text.toString()
 
+        // signUp 의 id값
         val inId = intent.getStringExtra("id")
+        // signUp 의 pwd값
         val inPwd = intent.getStringExtra("pwd")
+
+        // null Test
         val signNullTest = mSharedViewModel.signNullTest(id, pwd)
 
         if (signNullTest) {
 
             val signData = SignUpData("", inId, inPwd, "", "", "", "")
 
-            if (id == signData.signId && pwd == signData.signpwd) {
+            if (inId == signData.signId && inPwd == signData.signpwd) {
                 val intent = Intent(this, MajorChooseActivity::class.java)
                 startActivity(intent)
-                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+                objectClass.showToast(this, "로그인 성공")
             } else {
-                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+                objectClass.showToast(this, "로그인 실패")
             }
+        } else {
+            objectClass.showToast(this, "빈칸을 입력해 주세요")
         }
 
     }
