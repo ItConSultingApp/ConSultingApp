@@ -4,23 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background">
+    android:background="@color/white">
 
 
-    <ImageView
-        android:id="@+id/background_logo"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/logo" />
 
 
     <TextView
-        android:id="@+id/app_name"
+        android:id="@+id/app_name1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="160dp"
+        android:transitionName="logoTransition"
 
         android:fontFamily="@font/samliphopangcheoutline"
         android:gravity="center"
@@ -31,7 +26,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/app_name"
+        android:layout_below="@+id/app_name1"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/tmoneyroundwindextrabold"
         android:gravity="center"
@@ -53,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:transitionName="emailLoginTransition"
             android:background="@drawable/login_sign_up_btn"
             android:fontFamily="@font/tmoneyroundwindextrabold"
             android:text="@string/sign_in"
@@ -100,7 +96,7 @@
             android:text="@string/sign_up"
             android:textColor="@color/login_txt"
             android:textSize="15dp"
-
+            android:transitionName="signUp"
             />
     </LinearLayout>
 

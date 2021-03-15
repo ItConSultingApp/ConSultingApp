@@ -1,8 +1,10 @@
 package com.example.it_consultiong.UI
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Pair
 import androidx.appcompat.app.AppCompatActivity
 import com.example.it_consultiong.databinding.ActivityLoginMainBinding
 import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
@@ -26,13 +28,26 @@ class LoginMainActivity() : AppCompatActivity() {
         binding.signUp.setOnClickListener() {
             Log.d(TAG, "LoginActivity - signUp() called")
             val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
+            var options : ActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
+                this,
+                Pair.create(binding.signUp,"signUp"),
+                Pair.create(binding.appName1,"logoTransition")
+
+                )
+
+            startActivity(intent,options.toBundle())
 
         }
 
         binding.signIn.setOnClickListener{
             val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
+            var options : ActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
+                this,
+                Pair.create(binding.appName1,"logoTransition"),
+                Pair.create(binding.signIn,"emailLoginTransition"),
+
+            )
+            startActivity(intent,options.toBundle())
         }
     }
 

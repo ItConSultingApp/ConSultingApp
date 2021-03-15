@@ -13,5 +13,24 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+    </style>
+<!--    edittext커스텀-->
+    <style name="EditTextGreyStyle" parent="Widget.Design.TextInputLayout"> // important : parent 를 이것으로.
+
+        <item name="colorControlNormal">#DF4F4F</item>  // unFocus 상태일때 밑줄 색.
+        <item name="boxStrokeColor">#EF2323</item> // Focus 상태일때 밑줄 색.
+        <item name="colorSecondary">@color/black</item>
+
+
+        <item name="android:textColorHint">#605E5E</item>  // hint 색
+
+    </style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/login_edittext_bottombar</item>
+
+        <item name="android:windowActivityTransitions">true</item>
     </style>
 </resources>

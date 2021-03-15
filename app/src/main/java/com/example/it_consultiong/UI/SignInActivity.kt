@@ -65,7 +65,7 @@ class SignInActivity : AppCompatActivity() {
 
         if (signNullTest) {
 
-            val signData = SignUpData("", inId, inPwd, "", "", "", "")
+            val signData = SignUpData("", id, pwd, "", "", "", "")
 
             if (inId == signData.signId && inPwd == signData.signpwd) {
                 val intent = Intent(this, MajorChooseActivity::class.java)
