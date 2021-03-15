@@ -1,13 +1,14 @@
 package com.example.it_consultiong.mvvm.viewmodel
 
+import android.content.Context
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 open class ObjectClass : AppCompatActivity() {
 
 
-    fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    fun showToast(context:Context,message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
 
