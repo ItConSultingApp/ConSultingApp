@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:646555610365:android:83524cd1d2ba654c47a294",
+        "mobilesdk_app_id": "1:646555610365:android:71959a8b035cb55447a294",
         "android_client_info": {
-          "package_name": "com.example.it_consultiong"
+          "package_name": "com.cotion.it_consultiong"
         }
       },
       "oauth_client": [
