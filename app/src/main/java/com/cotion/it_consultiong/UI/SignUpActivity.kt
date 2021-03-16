@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.DialogInterface
@@ -145,6 +146,7 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
 
     override fun onItemClickListener() {
         objectClass.showToast(this,"아이템 클릭")
+        Toast.makeText(applicationContext,"아이템 클릭됨",Toast.LENGTH_SHORT).show()
     }
 
 }
