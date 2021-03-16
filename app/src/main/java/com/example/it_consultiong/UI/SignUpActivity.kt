@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.Toolbar
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.it_consultiong.DialogInterface
+import com.example.it_consultiong.MajorDialog
 import com.example.it_consultiong.R
 import com.example.it_consultiong.data.data_model.signUp
 import com.example.it_consultiong.databinding.ActivitySignUpBinding
@@ -20,7 +22,7 @@ import kotlinx.coroutines.InternalCoroutinesApi
 
 @Suppress("UNREACHABLE_CODE")
 @InternalCoroutinesApi
-class SignUpActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity(), DialogInterface {
 
     private val TAG = "SignUpActivity"
     private val mSharedViewModel: ShareViewModel by viewModels()
@@ -48,6 +50,13 @@ class SignUpActivity : AppCompatActivity() {
 
         }
 
+        binding.majorBtn.setOnClickListener {
+            onDialogBtnClicked(it)
+
+        }
+
+
+
     }
 
 
@@ -60,6 +69,15 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun onDialogBtnClicked(view: View){
+        Log.d(TAG, "onDialogBtnClicked: ")
+
+        val myCustomDialog = MajorDialog(this, this)
+
+        myCustomDialog.show()
+
     }
 
 
@@ -125,6 +143,10 @@ class SignUpActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onItemClickListener() {
+        objectClass.showToast(this,"아이템 클릭")
     }
 
 }
