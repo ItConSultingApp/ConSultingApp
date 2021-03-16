@@ -1,21 +1,22 @@
-package com.cotion.it_consultiong.UI
+package com.example.it_consultiong.UI
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
+import android.widget.Toolbar
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.cotion.it_consultiong.DialogInterface
-import com.cotion.it_consultiong.MajorDialog
-import com.cotion.it_consultiong.data.data_model.signUp
-import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
-import com.cotion.it_consultiong.mvvm.models.SignUpData
-import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
-import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
-import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
+import com.example.it_consultiong.DialogInterface
+import com.example.it_consultiong.MajorDialog
+import com.example.it_consultiong.R
+import com.example.it_consultiong.data.data_model.signUp
+import com.example.it_consultiong.databinding.ActivitySignUpBinding
+import com.example.it_consultiong.mvvm.models.SignUpData
+import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
+import com.example.it_consultiong.mvvm.viewmodel.ShareViewModel
+import com.example.it_consultiong.mvvm.viewmodel.SignUpViewModel
 import kotlinx.coroutines.InternalCoroutinesApi
 
 
@@ -146,7 +147,6 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
 
     override fun onItemClickListener() {
         objectClass.showToast(this,"아이템 클릭")
-        Toast.makeText(applicationContext,"아이템 클릭됨",Toast.LENGTH_SHORT).show()
     }
 
 }

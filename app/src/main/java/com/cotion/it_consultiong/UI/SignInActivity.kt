@@ -1,15 +1,18 @@
-package com.cotion.it_consultiong.UI
+package com.example.it_consultiong.UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
-import com.cotion.it_consultiong.MajorChooseActivity
-import com.cotion.it_consultiong.Room.room_models.SignUpData
-import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
-import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
-import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
+import com.example.it_consultiong.MajorChooseActivity
+import com.example.it_consultiong.Room.room_models.SignUpData
+import com.example.it_consultiong.data.data_model.signUp
+import com.example.it_consultiong.databinding.ActivityEmailSignInBinding
+import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
+import com.example.it_consultiong.mvvm.viewmodel.ShareViewModel
 
 
 class SignInActivity : AppCompatActivity() {

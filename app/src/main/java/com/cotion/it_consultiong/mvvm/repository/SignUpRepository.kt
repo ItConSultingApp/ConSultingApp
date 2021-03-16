@@ -1,8 +1,8 @@
-package com.cotion.it_consultiong.mvvm.repository
+package com.example.it_consultiong.mvvm.repository
 
 import androidx.lifecycle.LiveData
-import com.cotion.it_consultiong.Dao.SignUpDao
-import com.cotion.it_consultiong.mvvm.models.SignUpData
+import com.example.it_consultiong.Dao.SignUpDao
+import com.example.it_consultiong.mvvm.models.SignUpData
 
 
 class SignUpRepository(private val signUpDao: SignUpDao) {

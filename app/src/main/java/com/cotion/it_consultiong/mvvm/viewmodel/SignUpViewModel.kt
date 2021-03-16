@@ -16,13 +16,13 @@ import kotlinx.coroutines.launch
 class SignUpViewModel(application: Application) : AndroidViewModel(application) {
 
     private val signUpDao = SignUpDatabase.getDatabase(
-            application
+        application
     ).signUpDao()
-    
 
 
     private val repository: SignUpRepository = SignUpRepository(signUpDao)
     val getAllData: LiveData<List<SignUpData>> = repository.getAllData
+    val signInData: LiveData<List<SignUpData>> = repository.signInData
 
 
     fun insertData(signUpData: SignUpData) {
