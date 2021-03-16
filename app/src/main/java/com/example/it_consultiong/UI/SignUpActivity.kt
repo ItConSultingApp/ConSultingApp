@@ -44,17 +44,19 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
             mSharedViewModel.checkIfDatabaseEmpty(data)
         })
 
+
         binding.signUpBtn.setOnClickListener {
+            Log.d(TAG, "SignUpActivity - signUpBtn() called")
             insertDataToDb()
 
 
         }
 
         binding.majorBtn.setOnClickListener {
+            Log.d(TAG, "SignUpActivity - majorBtn() called")
             onDialogBtnClicked(it)
 
         }
-
 
 
     }
@@ -71,7 +73,8 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
         return super.onOptionsItemSelected(item)
     }
 
-    fun onDialogBtnClicked(view: View){
+
+    fun onDialogBtnClicked(view: View) {
         Log.d(TAG, "onDialogBtnClicked: ")
 
         val myCustomDialog = MajorDialog(this, this)
@@ -83,70 +86,13 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
 
     private fun insertDataToDb() {
 
-        val signUpId = binding.signUpEditId.text.toString()
-        val signUPwd = binding.signUpPassword.text.toString()
-        val signUpGrade = binding.signUpGrade.selectedItem.toString()
-        val signUpClassNumber = binding.signUpClassNumber.selectedItem.toString()
-        val signUpGradeClass = binding.signUpGradeClass.selectedItem.toString()
-        val signUpName = binding.signUpName.text.toString()
-        val signUpMajor = binding.signUpMajor.text.toString()
-        val signUpPwdCheck = binding.signUpCheckPassword.text.toString()
 
-        val signUpData =
-            signUp(signUpName, signUpId, signUPwd, signUpGrade, signUpGradeClass, signUpClassNumber)
-
-
-        val validation = mSharedViewModel.verifyDtaFromUser(
-            signUpData.signUpName,
-            signUpData.signUpId,
-            signUpData.signUpPwd,
-            signUpData.SignUpGrade,
-            signUpData.SignUpClass,
-            signUpData.SignUpClassNumber,
-            signUpMajor
-
-
-        )
-        if (validation && signUpPwdCheck == signUPwd) {
-
-            val signedData = SignUpData(
-                1,
-                signUpData.signUpName,
-                signUpData.signUpId,
-                signUpData.signUpPwd,
-                signUpData.SignUpGrade,
-                signUpData.SignUpClass,
-                signUpData.SignUpClassNumber
-            )
-
-
-            mSignUpViewModel.insertData(signedData)
-
-
-            Log.d(TAG, "insertDataToDb: $signedData")
-
-            intent.putExtra("id", signUpData.signUpId)
-            intent.putExtra("pwd", signUpData.signUpPwd)
-
-            Log.d(TAG, "id: ${signUpData.signUpId}\t pwd : ${signUpData.signUpPwd}")
-
-            objectClass.showToast(this, "회원가입 완료")
-
-            val intent = Intent(this, LoginMainActivity::class.java)
-            startActivity(intent)
-
-        } else if (validation && signUpPwdCheck != signUPwd) {
-            objectClass.showToast(this, "비밀번호를 확인해 주세요")
-
-        } else {
-            objectClass.showToast(this, "빈칸을 채워주세요!")
-        }
 
 
     }
 
     override fun onItemClickListener() {
-        objectClass.showToast(this,"아이템 클릭")
+        objectClass.showToast(this, "아이템 클릭")
     }
 
 }
