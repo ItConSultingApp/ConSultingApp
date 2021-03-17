@@ -3,7 +3,6 @@ package com.cotion.it_consultiong.UI
 import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
-import android.text.BoringLayout.make
 import android.util.Log
 import android.util.Pair
 import android.widget.Toast
@@ -11,19 +10,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.databinding.ActivityLoginMainBinding
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
+import com.example.it_consultiong.UI.SignInActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.snackbar.Snackbar.make
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 import kotlinx.coroutines.InternalCoroutinesApi
-import kotlin.math.log
 
 @InternalCoroutinesApi
 class LoginMainActivity() : AppCompatActivity() {
@@ -117,7 +112,7 @@ class LoginMainActivity() : AppCompatActivity() {
     }
 
     private fun loginSuccess(){
-        val intent = Intent(this, SignUpActivity::class.java)
+        val intent = Intent(this, SignInActivity::class.java)
         startActivity(intent)
         finish()
     }

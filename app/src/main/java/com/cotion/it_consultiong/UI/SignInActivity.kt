@@ -7,12 +7,10 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.example.it_consultiong.MajorChooseActivity
-import com.example.it_consultiong.Room.room_models.SignUpData
-import com.example.it_consultiong.data.data_model.signUp
-import com.example.it_consultiong.databinding.ActivityEmailSignInBinding
-import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
-import com.example.it_consultiong.mvvm.viewmodel.ShareViewModel
+import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
+import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
+import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
+
 
 
 class SignInActivity : AppCompatActivity() {
@@ -65,20 +63,12 @@ class SignInActivity : AppCompatActivity() {
 
         if (signNullTest) {
 
-            val signData = SignUpData("", id, pwd, "", "", "", "")
-
-            if (inId == signData.signId && inPwd == signData.signpwd) {
-                val intent = Intent(this, MajorChooseActivity::class.java)
-                startActivity(intent)
                 objectClass.showToast(this, "로그인 성공")
-            } else {
-                objectClass.showToast(this, "로그인 실패")
             }
-        } else {
             objectClass.showToast(this, "빈칸을 입력해 주세요")
         }
 
-    }
+
 
 
 }
