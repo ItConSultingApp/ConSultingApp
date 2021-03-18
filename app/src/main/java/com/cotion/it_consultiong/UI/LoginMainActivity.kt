@@ -5,8 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Pair
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.astritveliu.boom.Boom
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.databinding.ActivityLoginMainBinding
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
@@ -46,6 +48,9 @@ class LoginMainActivity() : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this,gso)
 
 
+        Boom(binding.signUp as View)
+        Boom(binding.signInGoogle as View)
+        Boom(binding.signIn as View)
         binding.signUp.setOnClickListener() {
             Log.d(TAG, "LoginActivity - signUp() called")
             val intent = Intent(this, SignUpActivity::class.java)
