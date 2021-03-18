@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.it_consultiong">
+    package="com.cotion.it_consultiong">
 
     <application
-        android:name=".App"
+        android:name="com.cotion.it_consultiong.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,23 +11,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.It_Consultiong">
 
-        <activity android:name=".UI.LoginMainActivity" >
+        <activity android:name="com.cotion.it_consultiong.UI.LoginMainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.SignInActivity">
+        <activity android:name="com.cotion.it_consultiong.UI.SignInActivity">
 
         </activity>
 
 
 
-        <activity android:name=".UI.SignUpActivity" >
+        <activity android:name="com.cotion.it_consultiong.UI.SignUpActivity" >
 
         </activity>
-        <activity android:name=".MajorChooseActivity"/>
+        <activity android:name="com.cotion.it_consultiong.MajorChooseActivity"/>
 
     </application>
 
