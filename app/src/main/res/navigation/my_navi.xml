@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/my_navi">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cotion.it_consultiong.UI.Main.FrgamentHome"
+        android:label="ToDo List"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_listFragment_to_updateFragment"
+            app:destination="@id/action_listFragment_to_updateFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.cotion.it_consultiong.UI.FragmentChat"
+        android:label="Add"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_addFragment_to_listFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 </navigation>
