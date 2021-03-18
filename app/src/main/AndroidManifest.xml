@@ -27,8 +27,7 @@
         <activity android:name="com.cotion.it_consultiong.UI.SignUpActivity" >
 
         </activity>
-        <activity android:name="com.cotion.it_consultiong.MajorChooseActivity"/>
-
+     <activity android:name=".UI.Main.FragmentMaInActivity"/>
     </application>
 
 </manifest>
