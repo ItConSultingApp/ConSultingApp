@@ -1,23 +1,35 @@
-package com.example.it_consultiong.UI
+package com.cotion.it_consultiong.UI
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
-import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
+<<<<<<<<< Temporary merge branch 1:app/src/main/java/com/cotion/it_consultiong/UI/SignInActivity.kt
+import com.cotion.it_consultiong.MajorChooseActivity
+import com.cotion.it_consultiong.Room.room_models.SignUpData
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
 import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
+=========
+import com.example.it_consultiong.Room.room_models.SignUpData
+import com.example.it_consultiong.databinding.ActivityEmailSignInBinding
+import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
+import com.example.it_consultiong.mvvm.viewmodel.ShareViewModel
+import com.example.it_consultiong.mvvm.viewmodel.SignUpViewModel
+import kotlinx.coroutines.InternalCoroutinesApi
+>>>>>>>>> Temporary merge branch 2:app/src/main/java/com/example/it_consultiong/UI/SignInActivity.kt
 
 
-
+@InternalCoroutinesApi
 class SignInActivity : AppCompatActivity() {
     lateinit var binding: ActivityEmailSignInBinding
-
+    private val TAG = "SignInActivity"
     private val mSharedViewModel: ShareViewModel by viewModels()
     private val objectClass = ObjectClass()
+    private val mSignUpViewModel: SignUpViewModel by viewModels()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEmailSignInBinding.inflate(layoutInflater)
@@ -30,8 +42,10 @@ class SignInActivity : AppCompatActivity() {
 
 
         binding.signInBtn.setOnClickListener {
-            signIn()
+
+
         }
+
 
     }
 
@@ -46,27 +60,6 @@ class SignInActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-
-    fun signIn() {
-        // editText id값
-        val id = binding.signInId.text.toString()
-        // editText pwd 값
-        val pwd = binding.signInPwd.text.toString()
-
-        // signUp 의 id값
-        val inId = intent.getStringExtra("id")
-        // signUp 의 pwd값
-        val inPwd = intent.getStringExtra("pwd")
-
-        // null Test
-        val signNullTest = mSharedViewModel.signNullTest(id, pwd)
-
-        if (signNullTest) {
-
-                objectClass.showToast(this, "로그인 성공")
-            }
-            objectClass.showToast(this, "빈칸을 입력해 주세요")
-        }
 
 
 

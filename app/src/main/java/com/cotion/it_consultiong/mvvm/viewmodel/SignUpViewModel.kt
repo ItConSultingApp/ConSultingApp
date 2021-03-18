@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.cotion.it_consultiong.Room.database.SignUpDatabase
 import com.cotion.it_consultiong.mvvm.models.SignUpData
-import com.example.it_consultiong.mvvm.repository.SignUpRepository
+import com.cotion.it_consultiong.mvvm.repository.SignUpRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.launch
@@ -22,7 +22,7 @@ class SignUpViewModel(application: Application) : AndroidViewModel(application) 
 
     private val repository: SignUpRepository = SignUpRepository(signUpDao)
     val getAllData: LiveData<List<SignUpData>> = repository.getAllData
-
+    val signInData: LiveData<List<SignUpData>> = repository.signInData
 
 
     fun insertData(signUpData: SignUpData) {

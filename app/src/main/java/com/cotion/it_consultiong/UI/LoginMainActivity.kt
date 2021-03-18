@@ -45,6 +45,7 @@ class LoginMainActivity() : AppCompatActivity() {
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
+
         googleSignInClient = GoogleSignIn.getClient(this,gso)
 
 
@@ -133,6 +134,3 @@ class LoginMainActivity() : AppCompatActivity() {
 }
 
 
-//1. DB에 있는 id와 password를 불러와 회원가입할 때 적었던 id와 password를 비교하여 맞으면 true 아니면 x
-//회원가입 할 때 로그인과 비밀번호를 여깄다가 보냄 , 이걸 Insert? ???
-// db에 있는 id와 비밀번호를 꺼내는 방법 한 테이블이겠지 ??

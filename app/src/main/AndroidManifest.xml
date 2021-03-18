@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.it_consultiong.UI.SignInActivity">
+        <activity android:name="com.cotion.it_consultiong.UI.SignInActivity">
 
         </activity>
 
@@ -27,7 +27,7 @@
         <activity android:name="com.cotion.it_consultiong.UI.SignUpActivity" >
 
         </activity>
-<!--        <activity android:name="com.cotion.it_consultiong.MajorChooseActivity"/>-->
+        <activity android:name="com.cotion.it_consultiong.MajorChooseActivity"/>
 
     </application>
 
