@@ -5,21 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import androidx.activity.viewModels
-<<<<<<<<< Temporary merge branch 1:app/src/main/java/com/cotion/it_consultiong/UI/SignInActivity.kt
-import com.cotion.it_consultiong.MajorChooseActivity
-import com.cotion.it_consultiong.Room.room_models.SignUpData
+import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
+
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
 import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
-=========
-import com.example.it_consultiong.Room.room_models.SignUpData
-import com.example.it_consultiong.databinding.ActivityEmailSignInBinding
-import com.example.it_consultiong.mvvm.viewmodel.ObjectClass
-import com.example.it_consultiong.mvvm.viewmodel.ShareViewModel
-import com.example.it_consultiong.mvvm.viewmodel.SignUpViewModel
-import kotlinx.coroutines.InternalCoroutinesApi
->>>>>>>>> Temporary merge branch 2:app/src/main/java/com/example/it_consultiong/UI/SignInActivity.kt
 
+import kotlinx.coroutines.InternalCoroutinesApi
 
 @InternalCoroutinesApi
 class SignInActivity : AppCompatActivity() {

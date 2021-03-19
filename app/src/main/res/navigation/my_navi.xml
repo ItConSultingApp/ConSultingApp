@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.cotion.it_consultiong.UI.Main.FrgamentHome"
+        android:name="com.cotion.it_consultiong.FrgamentHome"
         android:label="ToDo List"
         tools:layout="@layout/fragment_home">
 

@@ -91,12 +91,9 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
     }
 
     override fun onItemClickListener() {
-<<<<<<<<< Temporary merge branch 1:app/src/main/java/com/cotion/it_consultiong/UI/SignUpActivity.kt
         objectClass.showToast(this,"아이템 클릭")
         Toast.makeText(applicationContext,"아이템 클릭됨",Toast.LENGTH_SHORT).show()
-=========
         objectClass.showToast(this, "아이템 클릭")
->>>>>>>>> Temporary merge branch 2:app/src/main/java/com/example/it_consultiong/UI/SignUpActivity.kt
     }
 
 }

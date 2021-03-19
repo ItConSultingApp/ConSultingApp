@@ -12,7 +12,6 @@ import com.astritveliu.boom.Boom
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.databinding.ActivityLoginMainBinding
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
-import com.example.it_consultiong.UI.SignInActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
