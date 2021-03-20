@@ -160,7 +160,6 @@
                     android:id="@+id/sign_up_class_number"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-
                     android:layout_weight="1"
                     android:entries="@array/class_number" />
             </LinearLayout>
@@ -183,9 +182,11 @@
                     android:id="@+id/sign_up_major"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="나의 전공은?"
+                    android:hint="@string/mymajor"
                     android:background="#00000000"
-                    android:textColorHint="#ffffff" />
+                    android:focusable="false"
+
+                    android:textColorHint="@color/black" />
 
 
                 <androidx.appcompat.widget.AppCompatButton
