@@ -18,16 +18,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cotion.it_consultiong.UI.SignInActivity">
+        <activity android:name=".UI.Main.FragmentMaInActivity">
 
         </activity>
 
 
 
-        <activity android:name="com.cotion.it_consultiong.UI.SignUpActivity" >
+        <activity android:name=".UI.Sign.SignUpActivity"/>
 
-        </activity>
+
+
+
+
      <activity android:name=".UI.Main.FragmentMaInActivity"/>
+
     </application>
 
 </manifest>
