@@ -39,22 +39,21 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
 
                             android:id="@+id/img_android"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:background="@drawable/android_oreo"
                             android:clickable="true"
                             android:focusable="true" />
@@ -506,6 +505,7 @@
 
 
                         <ImageView
+                            android:id="@+id/img_etc"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -517,11 +517,14 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/major_etc"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
+                                android:textColorHint="@color/blue"
+                                android:clickable="false"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="기타"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -538,25 +541,7 @@
 
         </GridLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/check_btn"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:text="확인" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/cancel_button"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:text="취소" />
-        </LinearLayout>
     </LinearLayout>
 
 
