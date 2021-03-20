@@ -70,7 +70,6 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
             if (TextUtils.isEmpty(binding.signUpName.text.toString().trim { it <= ' ' })) {
                 toastOrEgg("이름을 입력하세요", 0, R.color.black, R.color.white, R.drawable.warning)
             } else {
-                val reg = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z]*@[gsm.hs.kr]$)"
                 var emailTxt = binding.signUpEditId.text.toString().trim()
                 var passwordTxt = binding.signUpPassword.text.toString().trim()
                 if (!emailTxt.matches(Regex("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}$"))) {
@@ -107,7 +106,7 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
                                 0,
                                 R.color.black,
                                 R.color.white,
-                                R.drawable.warning
+                                R.drawable.check
                             )
 
                             auth.createUserWithEmailAndPassword(emailTxt, passwordTxt)
@@ -131,7 +130,7 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
                                                 0,
                                                 R.color.black,
                                                 R.color.white,
-                                                R.drawable.check
+                                                R.drawable.warning
                                             )
                                         } else {
                                             toastOrEgg(
@@ -139,7 +138,7 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
                                                 0,
                                                 R.color.black,
                                                 R.color.white,
-                                                R.drawable.check
+                                                R.drawable.warning
                                             )
                                         }
                                     }
@@ -170,6 +169,8 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
         binding.signUpGradeClass.adapter = adapter2
         binding.signUpClassNumber.adapter = adapter3
 
+
+        //스피너 종류 구별
         binding.signUpGrade.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -181,7 +182,6 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
 
         }
@@ -197,7 +197,6 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
 
         }
@@ -213,10 +212,11 @@ class SignUpActivity : AppCompatActivity(), DialogInterface {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
 
         }
+
+
 
 
     }
