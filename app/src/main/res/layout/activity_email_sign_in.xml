@@ -54,6 +54,7 @@
                 android:id="@+id/sign_in_id"
                 android:layout_width="match_parent"
                 android:hint="아이디를 입력하세요"
+                android:inputType="text"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00000000" />
 
@@ -73,6 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="비밀번호를 입력하세요"
+                android:inputType="textPassword"
                 android:backgroundTint="#00000000" />
 
         </com.google.android.material.textfield.TextInputLayout>
