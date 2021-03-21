@@ -2,18 +2,23 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:fillViewport="true"
+    android:scrollbars="none">
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/major_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:clickable="false"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
 
 
         <GridLayout
@@ -34,22 +39,24 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:id="@+id/ImageAndroid"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:background="@drawable/android_oreo"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+
+                            android:id="@+id/img_android"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -58,6 +65,7 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/android_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
@@ -497,6 +505,7 @@
 
 
                         <ImageView
+                            android:id="@+id/img_etc"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -508,11 +517,14 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/major_etc"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
+                                android:textColorHint="@color/blue"
+                                android:clickable="false"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="기타"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -528,6 +540,9 @@
 
 
         </GridLayout>
+
+
     </LinearLayout>
+
 
 </ScrollView>
