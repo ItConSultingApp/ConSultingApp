@@ -51,7 +51,7 @@
 
                         <ImageView
 
-                            android:id="@+id/img_android"
+                            android:id="@+id/android_img"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/android_oreo"
@@ -94,20 +94,24 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+
+                            android:id="@+id/img_ios"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -116,11 +120,12 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/ios_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="ios"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -144,20 +149,24 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+
+                            android:id="@+id/web_frontEnt_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -166,11 +175,12 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/web_frontEnt_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="web-frontEnd"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -194,20 +204,24 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+
+                            android:id="@+id/web_backEnd_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -216,11 +230,66 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/web_backEnd_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="web-backEnd"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="SmallSp" />
+
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+
+                            android:id="@+id/web_function_class_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/web_function_class_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginTop="30dp"
+                                android:text="Web_기능반"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -244,20 +313,24 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+
+                            android:id="@+id/game_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -266,11 +339,68 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/game_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="game"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="SmallSp" />
+
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+
+                            android:id="@+id/game_function_class_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/game_function_class_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginTop="30dp"
+                                android:text="game_기능반"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -294,20 +424,23 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:id="@+id/Cyber_security_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -316,11 +449,12 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/Cyber_security_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="정보보안"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -344,20 +478,23 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:id="@+id/Cyber_security_function_class_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -366,11 +503,12 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/Cyber_security_function_class_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="정보보안기능반"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -394,20 +532,24 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+
+                            android:id="@+id/ai_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -416,11 +558,12 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/ai_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="Ai"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -444,20 +587,24 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+
+                            android:id="@+id/threeD_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -466,11 +613,12 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/threeD_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Android"
+                                android:text="3D"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -494,21 +642,24 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
 
                         <ImageView
-                            android:id="@+id/img_etc"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
+
+                            android:id="@+id/cloud_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
 
 
                         <LinearLayout
@@ -517,12 +668,178 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/major_etc"
+                                android:id="@+id/cloud_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
-                                android:textColorHint="@color/blue"
-                                android:clickable="false"
+                                android:layout_marginTop="30dp"
+                                android:text="cloud"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="SmallSp" />
+
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+
+                            android:id="@+id/iot_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/iot_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginTop="30dp"
+                                android:text="iot"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="SmallSp" />
+
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+
+                            android:id="@+id/robotics_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/robotics_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginTop="30dp"
+                                android:text="로보틱스"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="SmallSp" />
+
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <ImageView
+
+                            android:id="@+id/etc_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/android_oreo"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/etc_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
                                 android:text="기타"
                                 android:textSize="10sp"
