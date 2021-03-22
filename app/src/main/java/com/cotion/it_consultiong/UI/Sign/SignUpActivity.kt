@@ -297,7 +297,7 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
-        majorDialog.start(view)
+        majorDialog.start()
 
 
     }
