@@ -51,8 +51,9 @@
             android:gravity="right"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
 
@@ -79,12 +80,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
