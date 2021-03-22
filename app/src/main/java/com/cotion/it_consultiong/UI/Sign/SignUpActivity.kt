@@ -279,6 +279,7 @@ class SignUpActivity : AppCompatActivity() {
 
 
                 edit.text = null
+                edit.hint = "기타"
 
 
             } else {

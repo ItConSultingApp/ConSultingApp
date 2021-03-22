@@ -3,20 +3,32 @@
 
     <item android:id="@+id/mHome"
         android:title="Home"
-        android:icon="@drawable/ic_baseline_home_24" />
+        android:icon="@drawable/ic_baseline_home_24"
+        android:enabled="true"
+        />
 
     <item android:id="@+id/mBoard"
-        android:title="Search"
-        android:icon="@drawable/ic_baseline_search_24" />
+        android:title="게시판"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:enabled="true"
+        />
+
+
 
     <item android:id="@+id/placeholder"
-        android:title="" />
+        android:title=""
+        android:enabled="true"
+        />
 
     <item android:id="@+id/miProfile"
         android:title="Profile"
-        android:icon="@drawable/ic_baseline_person_24" />
+        android:icon="@drawable/ic_baseline_person_24"
+        android:enabled="true"
+        />
 
     <item android:id="@+id/miSettings"
         android:title="Settings"
-        android:icon="@drawable/ic_baseline_settings_24" />
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:enabled="true"
+        />
 </menu>

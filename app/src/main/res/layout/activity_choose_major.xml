@@ -50,7 +50,8 @@
 
 
                         <ImageView
-                            android:id="@+id/android_img"
+
+                            android:id="@+id/img_android"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/android_oreo"
@@ -104,7 +105,6 @@
 
 
                         <ImageView
-                            android:id="@+id/img_ios"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -116,12 +116,11 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/ios_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Ios"
+                                android:text="Android"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -156,7 +155,6 @@
 
 
                         <ImageView
-                            android:id="@+id/web_frontEnt_img"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -168,12 +166,11 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/web_frontEnt_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="web_frontEnt"
+                                android:text="Android"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -208,7 +205,6 @@
 
 
                         <ImageView
-                            android:id="@+id/web_backEnd_img"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -220,12 +216,11 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/web_backEnd_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="web_backEnd"
+                                android:text="Android"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -260,7 +255,6 @@
 
 
                         <ImageView
-                            android:id="@+id/web_function_class_img"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -272,12 +266,11 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/web_function_class_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="web_기능반"
+                                android:text="Android"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -312,7 +305,6 @@
 
 
                         <ImageView
-                            android:id="@+id/game_img"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -324,12 +316,11 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/game_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Game"
+                                android:text="Android"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -364,7 +355,6 @@
 
 
                         <ImageView
-                            android:id="@+id/game_function_class_img"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -376,12 +366,11 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/game_function_class_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="Game_기능반"
+                                android:text="Android"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -416,7 +405,6 @@
 
 
                         <ImageView
-                            android:id="@+id/Cyber_security_img"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -428,12 +416,11 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/Cyber_security_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="정보보안"
+                                android:text="Android"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -468,7 +455,6 @@
 
 
                         <ImageView
-                            android:id="@+id/Cyber_security_function_class_img"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -480,12 +466,11 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/Cyber_security_function_class_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:text="정보보안 기능반"
+                                android:text="Android"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
@@ -498,8 +483,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
-
 
             <androidx.cardview.widget.CardView
                 android:layout_width="150dp"
@@ -522,8 +505,7 @@
 
 
                         <ImageView
-
-                            android:id="@+id/ai_img"
+                            android:id="@+id/img_etc"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:src="@drawable/ic_launcher_background" />
@@ -535,289 +517,14 @@
                             android:gravity="center">
 
                             <TextView
-                                android:id="@+id/ai_text"
+                                android:id="@+id/major_etc"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
-                                android:layout_marginTop="30dp"
-                                android:clickable="false"
-                                android:text="AI"
                                 android:textColorHint="@color/blue"
-                                android:textSize="10sp"
-                                android:textStyle="bold"
-                                tools:ignore="SmallSp" />
-
-
-                        </LinearLayout>
-
-                    </FrameLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-
-
-                        <ImageView
-
-                            android:id="@+id/threeD_img"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
-
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:gravity="center">
-
-                            <TextView
-                                android:id="@+id/threeD_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_marginTop="30dp"
                                 android:clickable="false"
-                                android:text="3D"
-                                android:textColorHint="@color/blue"
-                                android:textSize="10sp"
-                                android:textStyle="bold"
-                                tools:ignore="SmallSp" />
-
-
-                        </LinearLayout>
-
-                    </FrameLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-
-
-                        <ImageView
-
-                            android:id="@+id/cloud_img"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
-
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:gravity="center">
-
-                            <TextView
-                                android:id="@+id/cloud_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
                                 android:layout_marginTop="30dp"
-                                android:clickable="false"
-                                android:text="Cloud"
-                                android:textColorHint="@color/blue"
-                                android:textSize="10sp"
-                                android:textStyle="bold"
-                                tools:ignore="SmallSp" />
-
-
-                        </LinearLayout>
-
-                    </FrameLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-
-
-                        <ImageView
-
-                            android:id="@+id/iot_img"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
-
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:gravity="center">
-
-                            <TextView
-                                android:id="@+id/iot_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_marginTop="30dp"
-                                android:clickable="false"
-                                android:text="Iot"
-                                android:textColorHint="@color/blue"
-                                android:textSize="10sp"
-                                android:textStyle="bold"
-                                tools:ignore="SmallSp" />
-
-
-                        </LinearLayout>
-
-                    </FrameLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-
-
-                        <ImageView
-
-                            android:id="@+id/robotics_img"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
-
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:gravity="center">
-
-                            <TextView
-                                android:id="@+id/robotics_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_marginTop="30dp"
-                                android:clickable="false"
-                                android:text="Robotics"
-                                android:textColorHint="@color/blue"
-                                android:textSize="10sp"
-                                android:textStyle="bold"
-                                tools:ignore="SmallSp" />
-
-
-                        </LinearLayout>
-
-                    </FrameLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-
-
-                        <ImageView
-
-                            android:id="@+id/etc_img"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:src="@drawable/ic_launcher_background" />
-
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:gravity="center">
-
-                            <TextView
-                                android:id="@+id/etc_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_marginTop="30dp"
-                                android:clickable="false"
                                 android:text="기타"
-                                android:textColorHint="@color/blue"
                                 android:textSize="10sp"
                                 android:textStyle="bold"
                                 tools:ignore="SmallSp" />
