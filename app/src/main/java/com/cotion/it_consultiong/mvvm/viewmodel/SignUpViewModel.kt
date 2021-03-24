@@ -24,6 +24,7 @@ class SignUpViewModel(application: Application) : AndroidViewModel(application) 
     val getAllData: LiveData<List<SignUpData>> = repository.getAllData
 
 
+
     fun insertData(signUpData: SignUpData) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.insertData(signUpData)

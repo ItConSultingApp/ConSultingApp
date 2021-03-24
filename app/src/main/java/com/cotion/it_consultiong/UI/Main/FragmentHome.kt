@@ -1,4 +1,4 @@
-package com.cotion.it_consultiong
+package com.cotion.it_consultiong.UI.Main
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -6,10 +6,11 @@ import android.util.Log
 import android.view.*
 import android.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.databinding.FragmentHomeBinding
 
-class FrgamentHome : Fragment() {
+class FragmentHome : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -22,11 +23,10 @@ class FrgamentHome : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 
-        // 안해주면 안뜸
+
         setHasOptionsMenu(true)
 
 
-        setMenuVisibility(true)
         Log.d(TAG, "onCreateView: ")
 
         return binding.root
@@ -35,14 +35,15 @@ class FrgamentHome : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.chat_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
+
     }
+
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.chatFragment -> {
-
+                findNavController().navigate(R.id.action_homeFragment_to_chatFragment)
                 true
             }
 
