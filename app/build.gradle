@@ -61,6 +61,11 @@ android {
         androidTestImplementation 'androidx.test.ext:junit:1.1.2'
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+
+        // 서클이미지
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+        implementation 'de.hdodenhof:circleimageview:3.1.0'
         // Room components
         def room_version = "2.2.6"
         implementation "androidx.room:room-runtime:$room_version"
