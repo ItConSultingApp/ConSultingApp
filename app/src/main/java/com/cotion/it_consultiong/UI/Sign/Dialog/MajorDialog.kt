@@ -31,11 +31,12 @@ class MajorDialog(context: Context) : View.OnClickListener {
 
 
 
-
     fun setOnOKClickedListener(listener: (String) -> Unit) {
         this.majorDialogInterface = object : MajorDialogInterface {
             override fun onPositiveClicked(major: TextView) {
                 Log.d(TAG, "MajorDialog - onPositiveClicked() called")
+                Log.d(TAG,"MajorDialog - () called")
+
                 listener(major.text.toString())
             }
 
@@ -96,21 +97,21 @@ class MajorDialog(context: Context) : View.OnClickListener {
             dlg.findViewById(R.id.etc_text),
         )
 
-        major.and_img?.setOnClickListener(this)
-        major.img_ios?.setOnClickListener(this)
-        major.web_frontEnt_img?.setOnClickListener(this)
-        major.web_backEnd_img?.setOnClickListener(this)
-        major.web_function_class_img?.setOnClickListener(this)
-        major.game_img?.setOnClickListener(this)
-        major.game_function_class_img?.setOnClickListener(this)
-        major.Cyber_security_img?.setOnClickListener(this)
-        major.Cyber_security_function_class_img?.setOnClickListener(this)
-        major.ai_img?.setOnClickListener(this)
-        major.threeD_img?.setOnClickListener(this)
-        major.cloud_img?.setOnClickListener(this)
-        major.iot_img?.setOnClickListener(this)
-        major.robotics_img?.setOnClickListener(this)
-        major.etc_img?.setOnClickListener(this)
+        major.and_img.setOnClickListener(this)
+        major.img_ios.setOnClickListener(this)
+        major.web_frontEnt_img.setOnClickListener(this)
+        major.web_backEnd_img.setOnClickListener(this)
+        major.web_function_class_img.setOnClickListener(this)
+        major.game_img.setOnClickListener(this)
+        major.game_function_class_img.setOnClickListener(this)
+        major.Cyber_security_img.setOnClickListener(this)
+        major.Cyber_security_function_class_img.setOnClickListener(this)
+        major.ai_img.setOnClickListener(this)
+        major.threeD_img.setOnClickListener(this)
+        major.cloud_img.setOnClickListener(this)
+        major.iot_img.setOnClickListener(this)
+        major.robotics_img.setOnClickListener(this)
+        major.etc_img.setOnClickListener(this)
 
         dlg.show()
 
@@ -131,11 +132,10 @@ class MajorDialog(context: Context) : View.OnClickListener {
             major.img_ios -> setOnClick(major.ios_text)
             major.web_frontEnt_img -> setOnClick(major.web_frontEnt_text)
             major.web_backEnd_img -> setOnClick(major.web_backEnd_text)
+            major.game_img -> setOnClick(major.game_text)
             major.web_function_class_img -> setOnClick(major.web_function_class_text)
-            major.game_img -> setOnClick(major.game_text)
-            major.game_img -> setOnClick(major.game_text)
             major.Cyber_security_img -> setOnClick(major.Cyber_security_text)
-            major.game_function_class_img -> setOnClick(major.game_function_class_text)
+            major.Cyber_security_function_class_img -> setOnClick(major.Cyber_security_function_class_text)
             major.ai_img -> setOnClick(major.ai_text)
             major.threeD_img -> setOnClick(major.threeD_text)
             major.cloud_img -> setOnClick(major.cloud_text)

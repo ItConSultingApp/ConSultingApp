@@ -18,17 +18,21 @@ class FragmentMaInActivity : AppCompatActivity(),
 
     private val TAG = "FragmentMaInActivity"
     private val binding by lazy { FragmentMainBinding.inflate(layoutInflater) }
+    private lateinit var fragmentBoard : FragmentBoard
+    private lateinit var fragmentHome: FragmentHome
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_main)
 
-        binding.navView.setOnNavigationItemSelectedListener(this)
+//        binding.navView.setsele(this)
 
         Log.d(TAG, "FragmentMaInActivity - onCreate() called")
 
 
-        replaceFragment(FragmentHome())
-
+        fragmentHome = FragmentHome.newInstance()
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_layout, fragmentHome).commit()
 
     }
 
@@ -36,27 +40,35 @@ class FragmentMaInActivity : AppCompatActivity(),
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.mHome -> {
-                replaceFragment(FragmentHome())
-                return true
+                fragmentHome = FragmentHome.newInstance()
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_layout, fragmentHome).commit()
             }
             R.id.mBoard -> {
-                replaceFragment(FragmentBoard())
-                return true
+                fragmentBoard = FragmentBoard.newInstance()
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_layout, fragmentBoard).commit()
             }
+//            R.id.miProfile-> {
+//                replaceFragment(FragmentBoard())
+//                return true
+//            }
+//            R.id.miSettings-> {
+//                replaceFragment(FragmentBoard())
+//                return true
+//            }
         }
-        return false
+        return true
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_layout, fragment)
-        fragmentTransaction.commitAllowingStateLoss()
-    }
-
-    fun onFabClicked(view: View) {
-
-        replaceFragment(FragmentChat())
-    }
+//    private fun replaceFragment(fragment: Fragment) {
+//        val fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+//        fragmentTransaction.replace(R.id.fragment_layout, fragment)
+//        fragmentTransaction.commitAllowingStateLoss()
+//    }
+//
+//    fun onFabClicked(view: View) {
+//
+//        replaceFragment(FragmentChat())
+//    }
 
 
 }

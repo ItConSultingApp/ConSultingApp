@@ -11,6 +11,14 @@ import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.databinding.FragmentHomeBinding
 
 class FragmentHome : Fragment() {
+
+    companion object{
+        const val TAG : String = "로그"
+
+        fun newInstance() : FragmentHome{
+            return FragmentHome()
+        }
+    }
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -18,7 +26,9 @@ class FragmentHome : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
+
+
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
