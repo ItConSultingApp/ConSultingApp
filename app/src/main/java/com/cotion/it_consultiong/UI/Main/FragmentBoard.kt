@@ -9,6 +9,13 @@ import androidx.fragment.app.Fragment
 import com.cotion.it_consultiong.databinding.FragmentBoardBinding
 
 class FragmentBoard : Fragment() {
+    companion object{
+        const val TAG : String = "로그"
+
+        fun newInstance() : FragmentBoard{
+            return FragmentBoard()
+        }
+    }
     private var _binding: FragmentBoardBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(

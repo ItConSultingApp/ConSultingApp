@@ -2,7 +2,6 @@ package com.cotion.it_consultiong.Recycler
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.UI.Sign.Dialog.App
 import com.cotion.it_consultiong.databinding.ChatItemBinding

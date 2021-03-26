@@ -1,5 +1,6 @@
 package com.cotion.it_consultiong.UI.Sign
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -11,6 +12,7 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
+import com.cotion.it_consultiong.UI.Main.FragmentMaInActivity
 import com.cotion.it_consultiong.UI.Sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
@@ -247,11 +249,13 @@ class SignUpActivity : AppCompatActivity() {
 
     }
 
+    //회원가입 성공했을때
     private fun onSignUpSuccess() {
         auth.currentUser?.uid.let {
             if (it != null) {
                 database.reference.child("users").child(it).setValue(signUpUserModel)
-//                val intent = Intent(this,)
+                val intent = Intent(this,FragmentMaInActivity::class.java)
+                startActivity(intent)
             }
         }
     }

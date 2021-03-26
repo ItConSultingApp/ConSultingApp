@@ -25,35 +25,58 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+        <com.simform.custombottomnavigation.SSCustomBottomNavigation
             android:id="@+id/nav_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
             android:layout_gravity="bottom"
-            android:background="#80000000"
-            app:itemIconTint="@color/white"
-            app:itemTextColor="@color/red"
-            app:labelVisibilityMode="selected"
+            app:ss_backgroundBottomColor="#ffffff"
+            app:ss_circleColor="#ff6f00"
+            app:ss_waveHeight="7"
+            app:ss_countBackgroundColor="#ff6f00"
+            app:ss_countTextColor="#ffffff"
+            app:ss_defaultIconColor="#000000"
+            app:ss_iconTextColor="#000000"
+            app:ss_rippleColor="#2f424242"
+            app:ss_iconTextSize="14sp"
+            app:ss_selectedIconColor="#ff6f00"
+            app:ss_selectedIconTextColor="#ff6f00"
+            app:ss_shadowColor="#1f212121"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/bottom_app_bar" />
+            app:menu="@menu/bottom_app_bar"
+            />
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            android:id="@+id/nav_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:background="#80000000"-->
+<!--            app:itemIconTint="@color/white"-->
+<!--            app:itemTextColor="@color/red"-->
+<!--            app:labelVisibilityMode="selected"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:menu="@menu/bottom_app_bar" />-->
 
     </FrameLayout>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addFab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:onClick="onFabClicked"
-        android:src="@drawable/ic_baseline_message_24"
-        app:backgroundTint="@color/white"
-        app:fabSize="auto"
-        app:layout_anchor="@+id/bottom_app_bar"
-        app:layout_anchorGravity="center|top" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/addFab"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:focusable="true"-->
+<!--        android:onClick="onFabClicked"-->
+<!--        android:src="@drawable/ic_baseline_message_24"-->
+<!--        app:backgroundTint="@color/white"-->
+<!--        app:fabSize="auto"-->
+<!--        app:layout_anchor="@+id/bottom_app_bar"-->
+<!--        app:layout_anchorGravity="center|top" />-->
 
 
 

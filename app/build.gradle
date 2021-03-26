@@ -124,4 +124,7 @@ dependencies {
     //Toast메세지 커스텀
     implementation 'com.github.fullpagedevelopers:ToastOrEgg:1.0'
 
+    //바텀네비게이션 커스텀
+    implementation 'com.github.simformsolutions:SSCustomBottomNavigation:1.0'
+
 }
