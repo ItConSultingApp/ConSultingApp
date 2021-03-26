@@ -8,11 +8,8 @@
 
     <string name="cotion" />
 
-
-
-
     <string name="app_login_introduction">선배들과 함께하는</string>
-    <string name="mymajor">나의 전공은?</string>
+
 
 
     <string-array name="grade">

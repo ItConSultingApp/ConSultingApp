@@ -124,4 +124,7 @@ dependencies {
     //Toast메세지 커스텀
     implementation 'com.github.fullpagedevelopers:ToastOrEgg:1.0'
 
+
+    //클릭이벤트
+    implementation 'com.github.astrit-veliu:Boom:1.0'
 }

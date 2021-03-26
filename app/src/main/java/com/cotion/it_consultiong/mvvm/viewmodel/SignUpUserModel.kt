@@ -1,4 +1,4 @@
-package com.cotion.it_consultiong.mvvm.models
+package com.cotion.it_consultiong.mvvm.viewmodel
 
 data class SignUpUserModel(
     var userName : String,

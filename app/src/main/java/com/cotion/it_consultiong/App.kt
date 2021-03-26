@@ -1,4 +1,4 @@
-package com.cotion.it_consultiong.UI.Sign.Dialog
+package com.cotion.it_consultiong
 
 import android.app.Application
 
@@ -10,6 +10,6 @@ class App : Application() {
     }
     override fun onCreate(){
         super.onCreate()
-        instance =this
+        instance=this
     }
 }

@@ -187,11 +187,9 @@
                     android:id="@+id/sign_up_major"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/mymajor"
+                    android:hint="나의 전공은?"
                     android:background="#00000000"
-                    android:focusable="false"
-
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="#ffffff" />
 
 
                 <androidx.appcompat.widget.AppCompatButton

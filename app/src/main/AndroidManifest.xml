@@ -3,7 +3,7 @@
     package="com.cotion.it_consultiong">
 
     <application
-        android:name=".UI.Sign.Dialog.App"
+        android:name="com.cotion.it_consultiong.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,19 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.Main.FragmentMaInActivity">
+        <activity android:name="com.cotion.it_consultiong.UI.SignInActivity">
 
         </activity>
 
 
 
-        <activity android:name=".UI.Sign.SignUpActivity"/>
+        <activity android:name="com.cotion.it_consultiong.UI.SignUpActivity" >
 
-
-
-
-
-
+        </activity>
 
     </application>
 
