@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cotion.it_consultiong">
 
+    <uses-permission android:name="android.perdmission.INTERNET" />
+
     <application
         android:name=".UI.Sign.Dialog.App"
         android:allowBackup="true"
