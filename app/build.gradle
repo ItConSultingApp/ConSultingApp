@@ -137,4 +137,8 @@ dependencies {
     //바텀네비게이션 커스텀
     implementation 'com.github.simformsolutions:SSCustomBottomNavigation:1.0'
 
+    //서클 이미지
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.google.firebase:firebase-firestore:22.1.1'
+
 }

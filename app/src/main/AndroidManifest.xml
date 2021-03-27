@@ -12,31 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.It_Consultiong">
-
-        <activity android:name=".UI.Sign.SignInActivity"/>
-
-        <activity android:name="com.cotion.it_consultiong.UI.LoginMainActivity" >
-
-        </activity>
-        <activity android:name=".UI.Main.FragmentMaInActivity">
+        <activity android:name=".UI.Main.BoardPostDrawUp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".UI.Sign.SignInActivity" />
+        <activity android:name=".UI.LoginMainActivity"></activity>
+        <activity android:name=".UI.Main.FragmentMaInActivity">
 
         </activity>
-
-
-
-        <activity android:name=".UI.Sign.SignUpActivity"/>
-
-
-
-
-
-
-
+        <activity android:name=".UI.Sign.SignUpActivity" />
     </application>
 
 </manifest>

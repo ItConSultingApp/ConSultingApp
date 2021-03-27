@@ -1,11 +1,13 @@
 package com.cotion.it_consultiong.UI.Sign
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import androidx.activity.viewModels
 import com.cotion.it_consultiong.R
+import com.cotion.it_consultiong.UI.Main.FragmentMaInActivity
 import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
 
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
@@ -103,6 +105,9 @@ class SignInActivity : AppCompatActivity() {
                     R.color.white,
                     R.drawable.check
                 )
+                val intent = Intent(this, FragmentMaInActivity::class.java)
+                startActivity(intent)
+
             }
             //계정이 없을때
             .addOnFailureListener {

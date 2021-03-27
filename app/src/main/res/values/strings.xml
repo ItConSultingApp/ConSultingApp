@@ -9,8 +9,6 @@
     <string name="cotion" />
 
 
-
-
     <string name="app_login_introduction">선배들과 함께하는</string>
     <string name="mymajor">나의 전공은?</string>
 
@@ -50,5 +48,19 @@
         <item>18</item>
         <item>19</item>
         <item>20</item>
+    </string-array>
+    <string-array name="job">
+        <item>3D</item>
+        <item>게임개발</item>
+        <item>로보틱스</item>
+        <item>안드로이드</item>
+        <item>웹 백엔드</item>
+        <item>웹 프론트</item>
+        <item>정보보안</item>
+        <item>AI</item>
+        <item>Cloud</item>
+        <item>iot</item>
+        <item>iOS</item>
+
     </string-array>
 </resources>

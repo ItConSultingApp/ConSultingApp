@@ -24,6 +24,8 @@ class FragmentBoard : Fragment() {
     ): View {
         _binding = FragmentBoardBinding.inflate(inflater, container, false)
 
+
+
         return binding.root
     }
 
