@@ -61,6 +61,16 @@ android {
         androidTestImplementation 'androidx.test.ext:junit:1.1.2'
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+        // Gson 변환기 라이브러리
+        implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+        //okHttp
+        implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+        implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+        // 서클이미지
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+        implementation 'de.hdodenhof:circleimageview:3.1.0'
         // Room components
         def room_version = "2.2.6"
         implementation "androidx.room:room-runtime:$room_version"

@@ -1,69 +1,72 @@
 package com.cotion.it_consultiong.UI.Main
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentChat
 import com.cotion.it_consultiong.databinding.FragmentMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class FragmentMaInActivity : AppCompatActivity(),
-    BottomNavigationView.OnNavigationItemSelectedListener {
+class FragmentMaInActivity : AppCompatActivity() {
 
     private val TAG = "FragmentMaInActivity"
     private val binding by lazy { FragmentMainBinding.inflate(layoutInflater) }
-    private lateinit var fragmentBoard : FragmentBoard
-    private lateinit var fragmentHome: FragmentHome
 
 
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private val mOnNavigationiItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+
+        when(item.itemId){
+            R.id.mBoard -> {
+                Log.d(TAG,"FragmentMaInActivity - () called")
+                replaceFragment(FragmentBoard())
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.mHome -> {
+                Log.d(TAG,"FragmentMaInActivity - () called")
+                replaceFragment(FragmentHome())
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.miProfile -> {
+                Log.d(TAG,"FragmentMaInActivity - () called")
+                println("info pressed")
+                replaceFragment(FragmentMeal())
+                return@OnNavigationItemSelectedListener true
+            }
+
+            else -> false
+        }
+    }
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_main)
+        setContentView(binding.root)
 
-//        binding.navView.setsele(this)
-
+        replaceFragment(FragmentHome())
+        binding.navView.setOnNavigationItemSelectedListener(mOnNavigationiItemSelectedListener)
         Log.d(TAG, "FragmentMaInActivity - onCreate() called")
+        supportFragmentManager.beginTransaction().add(R.id.fragment_layout, FragmentHome()).commit()
 
-
-        fragmentHome = FragmentHome.newInstance()
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_layout, fragmentHome).commit()
 
     }
 
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.mHome -> {
-                fragmentHome = FragmentHome.newInstance()
-                supportFragmentManager.beginTransaction().replace(R.id.fragment_layout, fragmentHome).commit()
-            }
-            R.id.mBoard -> {
-                fragmentBoard = FragmentBoard.newInstance()
-                supportFragmentManager.beginTransaction().replace(R.id.fragment_layout, fragmentBoard).commit()
-            }
-//            R.id.miProfile-> {
-//                replaceFragment(FragmentBoard())
-//                return true
-//            }
-//            R.id.miSettings-> {
-//                replaceFragment(FragmentBoard())
-//                return true
-//            }
-        }
-        return true
-    }
 
-//    private fun replaceFragment(fragment: Fragment) {
-//        val fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-//        fragmentTransaction.replace(R.id.fragment_layout, fragment)
-//        fragmentTransaction.commitAllowingStateLoss()
-//    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_layout, fragment)
+        fragmentTransaction.commitAllowingStateLoss()
+    }
 //
 //    fun onFabClicked(view: View) {
 //

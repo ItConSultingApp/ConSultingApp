@@ -52,10 +52,10 @@ class FragmentHome : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.chatFragment -> {
-                findNavController().navigate(R.id.action_homeFragment_to_chatFragment)
-                true
-            }
+//            R.id.chatFragment -> {
+//                findNavController().navigate(R.id.action_homeFragment_to_chatFragment)
+//                true
+//            }
 
             else -> super.onOptionsItemSelected(item)
         }
