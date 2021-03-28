@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navi">
+
+    <fragment
+        android:id="@+id/fragment_home_navi"
+        android:name="com.cotion.it_consultiong.UI.Main.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_fragment_home_navi_to_fragment_chat_navi"
+            app:destination="@id/fragment_chat_navi" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_chat_navi"
+        android:name="com.cotion.it_consultiong.UI.ChatFragment"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_fragment_chat_navi_to_fragment_home_navi"
+            app:destination="@id/fragment_home_navi" />
+    </fragment>
+</navigation>
