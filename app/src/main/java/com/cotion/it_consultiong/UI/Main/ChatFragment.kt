@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.cotion.it_consultiong.databinding.FragmentChatBinding
 
-class FragmentChat : Fragment() {
+class ChatFragment : Fragment() {
     private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(

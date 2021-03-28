@@ -1,22 +1,21 @@
 package com.cotion.it_consultiong.UI.Main
 
-import android.content.ContentValues.TAG
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.databinding.FragmentHomeBinding
 
-class FragmentHome : Fragment() {
+class HomeFragment : Fragment() {
 
     companion object{
         const val TAG : String = "로그"
 
-        fun newInstance() : FragmentHome{
-            return FragmentHome()
+        fun newInstance() : HomeFragment{
+            return HomeFragment()
         }
     }
     private var _binding: FragmentHomeBinding? = null
@@ -39,6 +38,7 @@ class FragmentHome : Fragment() {
 
         Log.d(TAG, "onCreateView: ")
 
+
         return binding.root
 
     }
@@ -52,10 +52,10 @@ class FragmentHome : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-//            R.id.chatFragment -> {
-//                findNavController().navigate(R.id.action_homeFragment_to_chatFragment)
-//                true
-//            }
+            R.id.message_menu -> {
+                findNavController().navigate(R.id.action_fragment_home_navi_to_fragment_chat_navi)
+                true
+            }
 
             else -> super.onOptionsItemSelected(item)
         }
