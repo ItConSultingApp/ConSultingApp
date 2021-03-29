@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.UI.FragmentMaInActivity
@@ -36,7 +37,7 @@ class BoardPostDrawUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        
+
         _binding = FragmentBoardPostDrawUpBinding.inflate(inflater, container, false)
 
 
@@ -64,15 +65,15 @@ class BoardPostDrawUpFragment : Fragment() {
             "when" to dateFormat,
             "contents" to binding.postTxt.text.toString()
         )
+
         db.collection("board_post").document(uid + dateFormat)
             .set(postInfo)
             .addOnSuccessListener {
-                objectClass.showToast(context, "게시글 올리기 성공")
-//                val intent = Intent(this, FragmentMaInActivity::class.java)
-//                startActivity(intent)
+                objectClass.showToast(requireContext(), "게시글 올리기 성공")
+                findNavController().navigate(R.id.action_fragment_board_post_navi_to_fragment_board_navi)
             }
             .addOnFailureListener {
-                objectClass.showToast(context, "게시글 올리기 실패")
+                objectClass.showToast(requireContext(), "게시글 올리기 실패")
             }
     }
 }
