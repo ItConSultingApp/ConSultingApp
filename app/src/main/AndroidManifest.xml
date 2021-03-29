@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.It_Consultiong">
-        <activity android:name=".UI.Main.BoardPostDrawUp">
+        <activity android:name=".UI.FragmentMaInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +21,7 @@
         </activity>
         <activity android:name=".UI.Sign.SignInActivity" />
         <activity android:name=".UI.LoginMainActivity"></activity>
-        <activity android:name=".UI.Main.FragmentMaInActivity">
-
-        </activity>
+<!--        <activity android:name=".UI.FragmentMaInActivity"/>-->
         <activity android:name=".UI.Sign.SignUpActivity" />
     </application>
 
