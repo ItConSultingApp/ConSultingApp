@@ -2,12 +2,15 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_navi">
+    android:id="@+id/my_navi"
+    app:startDestination="@id/fragment_home_navi">
 
     <fragment
         android:id="@+id/fragment_home_navi"
         android:name="com.cotion.it_consultiong.UI.Main.HomeFragment"
+        android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
+
         <action
             android:id="@+id/action_fragment_home_navi_to_fragment_chat_navi"
             app:destination="@id/fragment_chat_navi" />
@@ -16,9 +19,50 @@
     <fragment
         android:id="@+id/fragment_chat_navi"
         android:name="com.cotion.it_consultiong.UI.ChatFragment"
+        android:label="Chat"
         tools:layout="@layout/fragment_chat">
+
+
         <action
             android:id="@+id/action_fragment_chat_navi_to_fragment_home_navi"
             app:destination="@id/fragment_home_navi" />
+        <action
+            android:id="@+id/action_fragment_chat_navi_to_fragment_profile_navi"
+            app:destination="@id/fragment_profile_navi" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_board_navi"
+        android:name="com.cotion.it_consultiong.UI.Main.BoardFragment"
+        android:label="게시판"
+        tools:layout="@layout/fragment_board">
+
+
+        <action
+            android:id="@+id/action_fragment_board_navi_to_fragment_board_post_navi"
+            app:destination="@id/fragment_board_post_navi" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_board_post_navi"
+        android:name="com.cotion.it_consultiong.UI.Main.BoardPostDrawUpFragment"
+        android:label="글쓰기"
+        tools:layout="@layout/fragment_board_post_draw_up">
+
+        <action
+            android:id="@+id/action_fragment_board_post_navi_to_fragment_board_navi"
+            app:destination="@id/fragment_board_navi"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/fragment_board_navi"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_profile_navi"
+        android:name="com.cotion.it_consultiong.UI.Main.MealFragment"
+        android:label="식사 ?"
+        tools:layout="@layout/fragment_meal">
+
+
     </fragment>
 </navigation>
