@@ -7,6 +7,7 @@ import android.text.TextUtils
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.data.data_model.signInUserInfo
 import com.cotion.it_consultiong.databinding.ActivityBoardPostDrawUpBinding
+import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
 import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -29,7 +30,8 @@ class BoardPostDrawUp : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.postUpload.setOnClickListener {
-            if (!TextUtils.isEmpty(binding.postTxt.text.toString().trim {it <=' '})){
+            val check : Boolean =ShareViewModel(application).checkIfTextNull(binding.postTxt.text.toString())
+            if (check){
                 postInfo()
             }else{
                 toastOrEgg(

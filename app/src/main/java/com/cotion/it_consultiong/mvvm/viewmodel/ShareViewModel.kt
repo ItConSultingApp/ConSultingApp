@@ -18,6 +18,10 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
         emptyDatabase.value = signUpData.isEmpty()
     }
 
+    fun checkIfTextNull(text: String): Boolean{
+        return !TextUtils.isEmpty(text.trim {it <=' '})
+    }
+
     fun verifyDtaFromUser(
         name: String,
         id: String,
