@@ -15,5 +15,6 @@
     <color name="yellow">#ffff00</color>
     <color name="green">#00C980</color>
     <color name="login_txt">#000000</color>
+    <color name="pink">#EC407A</color>
     <color name="login_edittext_bottombar">#ffffff</color>
 </resources>
