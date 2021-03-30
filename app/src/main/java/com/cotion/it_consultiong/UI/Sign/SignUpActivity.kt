@@ -48,14 +48,6 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar!!.title = "회원가입"
 
 
-        mSignUpViewModel.getAllData.observe(this, androidx.lifecycle.Observer { data ->
-            mSharedViewModel.checkIfDatabaseEmpty(data)
-        })
-
-
-        mSignUpViewModel.getAllData.observe(this, androidx.lifecycle.Observer { data ->
-            mSharedViewModel.checkIfDatabaseEmpty(data)
-        })
 
 
         binding.signUpBtn.setOnClickListener {
