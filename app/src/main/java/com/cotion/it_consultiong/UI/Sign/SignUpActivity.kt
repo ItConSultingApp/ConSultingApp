@@ -8,11 +8,10 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.Main.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.FragmentMaInActivity
 import com.cotion.it_consultiong.UI.Sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
@@ -254,7 +253,7 @@ class SignUpActivity : AppCompatActivity() {
         auth.currentUser?.uid.let {
             if (it != null) {
                 database.reference.child("users").child(it).setValue(signUpUserModel)
-                val intent = Intent(this,FragmentMaInActivity::class.java)
+                val intent = Intent(this, FragmentMaInActivity::class.java)
                 startActivity(intent)
             }
         }

@@ -7,7 +7,8 @@ import android.util.Log
 import android.view.MenuItem
 import androidx.activity.viewModels
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.Main.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.Main.Splash.Companion.auth
 import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
 
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
@@ -26,8 +27,8 @@ class SignInActivity : AppCompatActivity() {
     private val mSharedViewModel: ShareViewModel by viewModels()
     private val objectClass = ObjectClass()
     private val mSignUpViewModel: SignUpViewModel by viewModels()
-    private lateinit var auth: FirebaseAuth
-    private lateinit var database: DatabaseReference
+//    private lateinit var auth: FirebaseAuth
+//    private lateinit var database: DatabaseReference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

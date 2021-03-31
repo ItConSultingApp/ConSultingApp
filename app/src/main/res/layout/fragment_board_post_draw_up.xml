@@ -4,57 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Main.BoardPostDrawUp">
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/postToolBar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/Theme.Design.Light.NoActionBar"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    android:layout_marginTop="?android:actionBarSize"
+    tools:context=".UI.Main.BoardPostDrawUpFragment">
+
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/postToolBar">
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="20dp"
-            >
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/post_profile"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    />
+                    android:src="@drawable/people" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/post_name"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:textSize="25dp"
                         android:text="박상선"
-                        />
+                        android:textSize="25dp" />
+
                     <Spinner
                         android:id="@+id/post_spinner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:entries="@array/job"
                         android:background="@drawable/post_spinner"
-                        />
+                        android:entries="@array/job" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -64,18 +56,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_marginTop="20dp"
-                android:hint="무슨 글을 남기고 싶으신가요?"
-                android:textSize="20dp"
-                android:gravity="left"
                 android:background="@android:color/transparent"
-                />
+                android:gravity="left"
+                android:hint="무슨 글을 남기고 싶으신가요?"
+                android:textSize="20dp" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/post_upload"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:text="게시하기"
-                />
+                android:text="게시하기" />
         </LinearLayout>
     </ScrollView>
 

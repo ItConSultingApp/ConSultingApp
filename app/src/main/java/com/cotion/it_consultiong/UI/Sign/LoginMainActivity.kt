@@ -121,7 +121,8 @@ class LoginMainActivity() : AppCompatActivity() {
 
 
     companion object {
-        private const val TAG = "GoogleActivity"
+        val GOOGLETAG = "GoogleActivity"
+        val AUTHTAG = "AuthCheck"
         private const val RC_SIGN_IN = 9001
     }
 

@@ -7,11 +7,12 @@
     <string name="back">back</string>
 
     <string name="cotion" />
-
+    <string name="your_string_here">This is an <u>underline</u>.</string>
 
     <string name="app_login_introduction">선배들과 함께하는</string>
     <string name="mymajor">나의 전공은?</string>
-
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
 
     <string-array name="grade">
 
