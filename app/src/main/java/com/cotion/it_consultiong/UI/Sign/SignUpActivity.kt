@@ -12,6 +12,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.UI.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
 import com.cotion.it_consultiong.UI.Sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
@@ -254,7 +255,8 @@ class SignUpActivity : AppCompatActivity() {
             if (it != null) {
                 database.reference.child("users").child(it).setValue(signUpUserModel)
                 val shareViewModel = ShareViewModel(application)
-                if(shareViewModel.getUserInfo()){
+                shareViewModel.getUserInfo()
+                if(userName!=null){
                     val intent = Intent(this, FragmentMaInActivity::class.java)
                     startActivity(intent)
                 }else{

@@ -22,7 +22,7 @@ class Splash : AppCompatActivity() {
 
     companion object{
         lateinit var auth : FirebaseAuth
-        lateinit var database : DatabaseReference
+        val database = FirebaseDatabase.getInstance().reference
         lateinit var uid: String
 
         //로그인된 유저 정보
@@ -47,17 +47,20 @@ class Splash : AppCompatActivity() {
     @InternalCoroutinesApi
     override fun onStart() {
         super.onStart()
-        auth = FirebaseAuth.getInstance()
-        Log.d(AUTHTAG,"${auth.currentUser.uid}")
+        val auth :FirebaseAuth = FirebaseAuth.getInstance()
+        Log.d("증명","$auth")
+                if (auth.currentUser == null){
+                    Handler().postDelayed(
+                        {
+                            goNext(false)
+                        },
+                        1500
+                    )
 
-        Handler().postDelayed(
-            {
-                if (auth == null){
-                    goNext(false)
                 }else{
                     val shareViewModel = ShareViewModel(application)
-                    val share = shareViewModel.getUserInfo()
-                    Log.d("aa","share : $share")
+                    shareViewModel.startGetUserInfo()
+                    Log.d("aa","입력받은 유저 name : $userName")
 
 
 
@@ -67,12 +70,9 @@ class Splash : AppCompatActivity() {
                             val intent = Intent(this, FragmentMaInActivity::class.java)
                             startActivity(intent)
                         },
-                        1500
+                        2500
                     )
                 }
-            },
-            1500
-        )
 
     }
 
