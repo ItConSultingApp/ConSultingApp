@@ -253,8 +253,20 @@ class SignUpActivity : AppCompatActivity() {
         auth.currentUser?.uid.let {
             if (it != null) {
                 database.reference.child("users").child(it).setValue(signUpUserModel)
-                val intent = Intent(this, FragmentMaInActivity::class.java)
-                startActivity(intent)
+                val shareViewModel = ShareViewModel(application)
+                if(shareViewModel.getUserInfo()){
+                    val intent = Intent(this, FragmentMaInActivity::class.java)
+                    startActivity(intent)
+                }else{
+                    toastOrEgg(
+                        "사용자 정보를 불러오는데 오류가 발생했습니다",
+                        0,
+                        R.color.black,
+                        R.color.white,
+                        R.drawable.warning
+                    )
+                }
+
             }
         }
     }

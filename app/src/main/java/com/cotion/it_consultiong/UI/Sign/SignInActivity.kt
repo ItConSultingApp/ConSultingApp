@@ -3,12 +3,15 @@ package com.cotion.it_consultiong.UI.Sign
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.MenuItem
 import androidx.activity.viewModels
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.UI.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.Main.Splash
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.auth
+import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
 import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
 
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
@@ -99,19 +102,35 @@ class SignInActivity : AppCompatActivity() {
             }
             //계정이 있을때
             .addOnSuccessListener {
-                toastOrEgg(
-                    "로그인 성공",
-                    0,
-                    R.color.black,
-                    R.color.white,
-                    R.drawable.check
+
+                val shareViewModel = ShareViewModel(application)
+                val share = shareViewModel.getUserInfo()
+                Log.d("aa","share : $share")
+
+
+
+                Handler().postDelayed(
+                    {
+                        Log.d(TAG,"사용자 저장된 이름 : ${userName}")
+                        toastOrEgg(
+                            "로그인 성공",
+                            0,
+                            R.color.black,
+                            R.color.white,
+                            R.drawable.check
+                        )
+                        val intent = Intent(this, FragmentMaInActivity::class.java)
+                        startActivity(intent)
+                    },
+                    1500
                 )
-                val intent = Intent(this, FragmentMaInActivity::class.java)
-                startActivity(intent)
+
+
 
             }
             //계정이 없을때
             .addOnFailureListener {
+                Log.d(TAG,"오류 내용 : $it")
                 if (it.toString() == "com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: The password is invalid or the user does not have a password.") {
                     toastOrEgg(
                         "암호가 올바르지 않습니다",

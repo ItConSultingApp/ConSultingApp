@@ -12,6 +12,7 @@ import com.cotion.it_consultiong.UI.LoginMainActivity
 import com.cotion.it_consultiong.UI.LoginMainActivity.Companion.AUTHTAG
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
 import com.cotion.it_consultiong.data.data_model.signInUserInfo
+import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
 import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -48,13 +49,26 @@ class Splash : AppCompatActivity() {
         super.onStart()
         auth = FirebaseAuth.getInstance()
         Log.d(AUTHTAG,"${auth.currentUser.uid}")
+
         Handler().postDelayed(
             {
                 if (auth == null){
                     goNext(false)
                 }else{
-                    uid = auth.currentUser.uid
-                    getUserInfo()
+                    val shareViewModel = ShareViewModel(application)
+                    val share = shareViewModel.getUserInfo()
+                    Log.d("aa","share : $share")
+
+
+
+                    Handler().postDelayed(
+                        {
+
+                            val intent = Intent(this, FragmentMaInActivity::class.java)
+                            startActivity(intent)
+                        },
+                        1500
+                    )
                 }
             },
             1500
@@ -62,34 +76,7 @@ class Splash : AppCompatActivity() {
 
     }
 
-    @InternalCoroutinesApi
-    private fun getUserInfo(){
-        database = FirebaseDatabase.getInstance().reference
-        val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post = dataSnapshot.child("users").child(uid).getValue(signInUserInfo::class.java)
-                userName = post?.userName
-                userGrade = post?.userGrade
-                userClass = post?.userClass
-                userNumber = post?.userNumber
-                userEmail = post?.userEmail
-                userPassword = post?.userPassword
-                userJob = post?.userJob
-                Log.d("리그", post?.userClass.toString())
-                goNext(true)
-            }
-            override fun onCancelled(databaseError: DatabaseError) {
-                toastOrEgg(
-                    "예기치 않은 오류가 발생했습니다",
-                    0,
-                    R.color.black,
-                    R.color.white,
-                    R.drawable.warning
-                )
-            }
-        }
-        database.addListenerForSingleValueEvent (postListener)
-    }
+
 
     @InternalCoroutinesApi
     private fun goNext(new:Boolean){
