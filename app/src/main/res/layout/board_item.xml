@@ -8,6 +8,7 @@
     app:cardElevation="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/board_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -27,6 +28,7 @@
 <!--                android:background="@drawable/board_item_background"-->
 
                 <TextView
+                    android:id="@+id/board_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -49,6 +51,7 @@
 
 
                     <ImageView
+                        android:id="@+id/title_image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="3dp"
@@ -57,6 +60,7 @@
                         android:padding="5dp" />
 
                     <ImageView
+                        android:id="@+id/img_board"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="3dp"
@@ -70,6 +74,7 @@
 
             <View style="@style/board_context"/>
             <TextView
+                android:id="@+id/board_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -85,6 +90,7 @@
                 android:layout_marginTop="10dp"/>
 
             <TextView
+                android:id="@+id/board_context"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
 
@@ -121,14 +127,15 @@
                 android:id="@+id/likes_count_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="999"
+                android:text="0"
                 android:textColor="#fff" />
 
         </LinearLayout>
 
 
         <TextView
-            android:id="@+id/created_at_text"
+
+            android:id="@+id/board_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
