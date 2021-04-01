@@ -7,7 +7,7 @@ import android.util.Log
 import android.view.MenuItem
 import androidx.activity.viewModels
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.Main.FragmentMaInActivity
 import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
 
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding

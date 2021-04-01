@@ -53,11 +53,17 @@
             android:id="@+id/action_fragment_board_post_navi_to_fragment_board_navi"
             app:destination="@id/fragment_board_navi"
             app:enterAnim="@anim/from_right"
+<<<<<<< HEAD
             app:exitAnim="@anim/to_left" />
         <argument android:name="currentItem"
             app:argType="com.cotion.it_consultiong.model.recycler_model.BoardData" />
 
 
+=======
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/fragment_board_navi"
+            app:popUpToInclusive="true" />
+>>>>>>> aed244012055c48ca335f17593cd8cade4cb41d8
     </fragment>
     <fragment
         android:id="@+id/fragment_profile_navi"

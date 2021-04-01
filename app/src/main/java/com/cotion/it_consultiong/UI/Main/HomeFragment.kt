@@ -7,6 +7,11 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.cotion.it_consultiong.R
+import com.cotion.it_consultiong.UI.Main.Splash.Companion.userClass
+import com.cotion.it_consultiong.UI.Main.Splash.Companion.userGrade
+import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
+import com.cotion.it_consultiong.UI.Main.Splash.Companion.userNumber
+import com.cotion.it_consultiong.data.data_model.signInUserInfo
 import com.cotion.it_consultiong.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -20,8 +25,7 @@ class HomeFragment : Fragment() {
     }
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
-
+    private val user_grade_class_number:String =userGrade+"학년 "+userClass+"반 "+userNumber+"번"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,8 +35,9 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        binding.userGradeClassNumber.text = user_grade_class_number
 
-
+        binding.userName.text = userName
         setHasOptionsMenu(true)
 
 

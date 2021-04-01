@@ -1,15 +1,34 @@
 package com.cotion.it_consultiong.data.data_model
 
-data class signInUserInfo(
-    val name: String?,
-    val grade: String?,
-    val grad_class: String?,
-    val class_number: String?,
-    val job: String?,
-    val profileImg: String?
-) {
-    constructor() : this(null, null, null, null, null, null) {
+import android.net.Uri
+
+class signInUserInfo (
+    var userName: String?,
+    var userEmail: String?,
+    var userPassword: String?,
+    var userGrade: String?,
+    var userClass: String?,
+    var userNumber: String?,
+    var userJob: String?,
+    var userProfile: Uri?
+){
+    constructor(): this(null,null,null,null,null,null,null,null){
 
     }
-
 }
+//    constructor() {
+//    }
+
+
+//    constructor(userName : String?, userEmail : String?,
+//                userPassword : String?, userGrade : String?,
+//    userClass:String?, userNumber:String?, userJob : String?, userProfile: Uri?) {
+//        this.userName = userName
+//        this.userEmail = userEmail
+//        this.userPassword = userPassword
+//        this.userGrade = userGrade
+//        this.userClass = userClass
+//        this.userNumber = userNumber
+//        this.userJob = userJob
+//        this.userProfile = userProfile
+//    }
