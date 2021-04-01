@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+
         android:transitionName="logoTransition"
         android:layout_below="@+id/upToolBar"
         android:layout_above="@+id/sign_up_info"
