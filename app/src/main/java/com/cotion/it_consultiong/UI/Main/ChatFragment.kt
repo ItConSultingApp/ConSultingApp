@@ -26,6 +26,7 @@ class ChatFragment : Fragment() {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
         val chat_reclyclerView = binding.chatRecyclerView
 
+        chat_reclyclerView.layoutManager = LinearLayoutManager(requireContext())
         chat_reclyclerView.apply {
             adapter = chatAdapter
             layoutManager = LinearLayoutManager(requireContext())
