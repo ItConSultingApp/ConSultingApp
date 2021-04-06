@@ -11,7 +11,8 @@ import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMainActivity
+import com.cotion.it_consultiong.UI.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
 import com.cotion.it_consultiong.UI.Sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
@@ -48,6 +49,14 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar!!.title = "회원가입"
 
 
+        mSignUpViewModel.getAllData.observe(this, androidx.lifecycle.Observer { data ->
+            mSharedViewModel.checkIfDatabaseEmpty(data)
+        })
+
+
+        mSignUpViewModel.getAllData.observe(this, androidx.lifecycle.Observer { data ->
+            mSharedViewModel.checkIfDatabaseEmpty(data)
+        })
 
 
         binding.signUpBtn.setOnClickListener {
@@ -245,8 +254,21 @@ class SignUpActivity : AppCompatActivity() {
         auth.currentUser?.uid.let {
             if (it != null) {
                 database.reference.child("users").child(it).setValue(signUpUserModel)
-                val intent = Intent(this, FragmentMainActivity::class.java)
-                startActivity(intent)
+                val shareViewModel = ShareViewModel(application)
+                shareViewModel.getUserInfo()
+                if(userName!=null){
+                    val intent = Intent(this, FragmentMaInActivity::class.java)
+                    startActivity(intent)
+                }else{
+                    toastOrEgg(
+                        "사용자 정보를 불러오는데 오류가 발생했습니다",
+                        0,
+                        R.color.black,
+                        R.color.white,
+                        R.drawable.warning
+                    )
+                }
+
             }
         }
     }

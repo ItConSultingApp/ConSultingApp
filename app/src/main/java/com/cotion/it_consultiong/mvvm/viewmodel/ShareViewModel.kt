@@ -7,15 +7,18 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.UI.Main.Splash
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.auth
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.uid
 import com.cotion.it_consultiong.UI.Sign.Dialog.App
 import com.cotion.it_consultiong.data.data_model.signInUserInfo
 import com.cotion.it_consultiong.mvvm.models.SignUpData
+import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.coroutines.InternalCoroutinesApi
 
@@ -27,6 +30,10 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
     //데이터 있음
     fun checkIfDatabaseEmpty(signUpData: List<SignUpData>) {
         emptyDatabase.value = signUpData.isEmpty()
+    }
+
+    fun checkIfTextNull(text: String): Boolean{
+        return !TextUtils.isEmpty(text.trim {it <=' '})
     }
 
     fun verifyDtaFromUser(
@@ -66,15 +73,14 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     @InternalCoroutinesApi
-    fun getUserInfo() {
+    fun getUserInfo(){
         auth = FirebaseAuth.getInstance()
         uid = auth.currentUser?.uid.toString()
 
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post =
-                    dataSnapshot.child("users").child(uid).getValue(signInUserInfo::class.java)
-                Log.d("증명", "post name : ${post?.userName}")
+                val post = dataSnapshot.child("users").child(uid).getValue(signInUserInfo::class.java)
+                Log.d("증명","post name : ${post?.userName}")
                 Splash.userName = post?.userName
                 Splash.userGrade = post?.userGrade
                 Splash.userClass = post?.userClass
@@ -83,33 +89,29 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
                 Splash.userPassword = post?.userPassword
                 Splash.userJob = post?.userJob
                 Log.d("리그", post?.userClass.toString())
-                Log.d("증명", "onDataChange 여기야")
+                Log.d("증명","onDataChange 여기야")
 
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
-                Log.d("증명", "$databaseError")
+                Log.d("증명","$databaseError")
             }
         }
-        Splash.database.addListenerForSingleValueEvent(postListener)
+        Splash.database.addListenerForSingleValueEvent (postListener)
 
     }
 
 
+
     @InternalCoroutinesApi
-    fun startGetUserInfo() {
+    fun startGetUserInfo(){
         val auth = FirebaseAuth.getInstance()
-        Log.d("증명", "uid : ${auth.currentUser?.uid}")
-        Toast.makeText(App.instance, "${auth.currentUser?.uid}", Toast.LENGTH_SHORT).show()
+        Log.d("증명","uid : ${auth.currentUser?.uid}")
+        Toast.makeText(App.instance,"${auth.currentUser?.uid}",Toast.LENGTH_SHORT).show()
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post = auth.currentUser?.uid?.let {
-                    dataSnapshot.child("users").child(it).getValue(
-                        signInUserInfo::class.java
-                    )
-                }
+                val post = auth.currentUser?.uid?.let { dataSnapshot.child("users").child(it).getValue(signInUserInfo::class.java) }
 
-                Log.d("증명", "post name : ${post?.userName}")
+                Log.d("증명","post name : ${post?.userName}")
                 Splash.userName = post?.userName
                 Splash.userGrade = post?.userGrade
                 Splash.userClass = post?.userClass
@@ -118,14 +120,13 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
                 Splash.userPassword = post?.userPassword
                 Splash.userJob = post?.userJob
                 Log.d("리그", post?.userClass.toString())
-                Log.d("증명", "onDataChange 여기야")
+                Log.d("증명","onDataChange 여기야")
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
-                Log.d("증명", "$databaseError")
+                Log.d("증명","$databaseError")
             }
         }
-        Splash.database.addListenerForSingleValueEvent(postListener)
+        Splash.database.addListenerForSingleValueEvent (postListener)
 
     }
 
