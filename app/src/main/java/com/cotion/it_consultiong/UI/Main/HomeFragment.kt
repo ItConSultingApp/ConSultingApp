@@ -19,9 +19,7 @@ class HomeFragment : Fragment() {
     companion object{
         const val TAG : String = "로그"
 
-        fun newInstance() : HomeFragment{
-            return HomeFragment()
-        }
+
     }
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -41,7 +39,7 @@ class HomeFragment : Fragment() {
         setHasOptionsMenu(true)
 
 
-        Log.d(TAG, "onCreateView: ")
+
 
 
         return binding.root
