@@ -2,6 +2,7 @@ package com.cotion.it_consultiong.UI.Sign
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.text.TextUtils
 import android.util.Log
 import android.view.MenuItem
@@ -10,6 +11,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.astritveliu.boom.Boom
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.UI.FragmentMaInActivity
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
@@ -59,11 +61,34 @@ class SignUpActivity : AppCompatActivity() {
         })
 
 
+//        binding.signUpPassword.setOnClickListener {
+//            val tooltip = Tooltip.Builder(Context)
+//                .anchor(View, Int, Int, Boolean)
+//                .anchor(Int, Int)
+//                .text(CharSequence)
+//                .styleId(Int)
+//                .typeface(Typeface)
+//                .maxWidth(Int)
+//                .arrow(Boolean)
+//                .floatingAnimation(Tooltip.Animation)
+//                .closePolicy(ClosePolicy)
+//                .showDuration(Long)
+//                .fadeDuration(Long)
+//                .overlay(Boolean)
+//                .create()
+//
+//            tooltip
+//                .doOnHidden { }
+//                .doOnFailure { }
+//                .doOnShown { }
+//                .show(View, Tooltip.Gravity, Boolean)
+//        }
         binding.signUpBtn.setOnClickListener {
 
 
             if (TextUtils.isEmpty(binding.signUpName.text.toString().trim { it <= ' ' })) {
                 toastOrEgg("이름을 입력하세요", 0, R.color.black, R.color.white, R.drawable.warning)
+
             } else {
                 val emailTxt = binding.signUpEditId.text.toString().trim()
                 val passwordTxt = binding.signUpPassword.text.toString().trim()
@@ -96,48 +121,69 @@ class SignUpActivity : AppCompatActivity() {
                                 R.drawable.warning
                             )
                         } else {
-                            toastOrEgg(
-                                "잠시만 기다려주세요",
-                                0,
-                                R.color.black,
-                                R.color.white,
-                                R.drawable.check
-                            )
+                            if (TextUtils.isEmpty(binding.signUpMajor.text.toString().trim { it <= ' ' }))
+                            {
+                                toastOrEgg(
+                                    "전공을 선택해 주세요",
+                                    0,
+                                    R.color.black,
+                                    R.color.white,
+                                    R.drawable.warning
+                                )
+                            }else{
+                                toastOrEgg(
+                                    "잠시만 기다려주세요",
+                                    0,
+                                    R.color.black,
+                                    R.color.white,
+                                    R.drawable.check
+                                )
 
-                            auth.createUserWithEmailAndPassword(emailTxt, passwordTxt)
-                                .addOnCompleteListener(this) { task ->
-                                    if (task.isSuccessful) {
-                                        Log.d(TAG, "createUserWithEmail:success")
-                                        signUpUserModel.userName =
-                                            binding.signUpName.text.toString()
-                                        signUpUserModel.userEmail =
-                                            binding.signUpEditId.text.toString()
-                                        signUpUserModel.userPassword =
-                                            binding.signUpPassword.text.toString()
+                                auth.createUserWithEmailAndPassword(emailTxt, passwordTxt)
+                                    .addOnCompleteListener(this) { task ->
+                                        if (task.isSuccessful) {
+                                            Log.d(TAG, "createUserWithEmail:success")
+                                            signUpUserModel.userName =
+                                                binding.signUpName.text.toString()
+                                            signUpUserModel.userEmail =
+                                                binding.signUpEditId.text.toString()
+                                            signUpUserModel.userPassword =
+                                                binding.signUpPassword.text.toString()
+                                            signUpUserModel.userJob = binding.signUpMajor.text.toString()
+                                            onSignUpSuccess()
+                                            //학년, 반, 번호, 전공은 다이얼로그가 만들어지면 설정하는 코드 작성하기
 
-                                        onSignUpSuccess()
-                                        //학년, 반, 번호, 전공은 다이얼로그가 만들어지면 설정하는 코드 작성하기
-
-                                    } else {
-                                        if (task.exception.toString() == "com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account.") {
-                                            toastOrEgg(
-                                                "이미 가입되어 있습니다",
-                                                0,
-                                                R.color.black,
-                                                R.color.white,
-                                                R.drawable.warning
-                                            )
                                         } else {
-                                            toastOrEgg(
-                                                "회원가입에 실패했습니다",
-                                                0,
-                                                R.color.black,
-                                                R.color.white,
-                                                R.drawable.warning
-                                            )
+                                            if (task.exception.toString() == "com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account.") {
+                                                toastOrEgg(
+                                                    "이미 가입되어 있습니다",
+                                                    0,
+                                                    R.color.black,
+                                                    R.color.white,
+                                                    R.drawable.warning
+                                                )
+                                            } else {
+                                                toastOrEgg(
+                                                    "회원가입에 실패했습니다",
+                                                    0,
+                                                    R.color.black,
+                                                    R.color.white,
+                                                    R.drawable.warning
+                                                )
+                                            }
                                         }
                                     }
-                                }
+//                                    .addOnFailureListener {
+//                                        toastOrEgg(
+//                                            "회원가입에 예기치 못한 오류가 발생했습니다",
+//                                            0,
+//                                            R.color.black,
+//                                            R.color.white,
+//                                            R.drawable.warning
+//                                        )
+//                                    }
+                            }
+
                         }
                     }
                 }
@@ -255,19 +301,23 @@ class SignUpActivity : AppCompatActivity() {
             if (it != null) {
                 database.reference.child("users").child(it).setValue(signUpUserModel)
                 val shareViewModel = ShareViewModel(application)
-                shareViewModel.getUserInfo()
-                if(userName!=null){
-                    val intent = Intent(this, FragmentMaInActivity::class.java)
-                    startActivity(intent)
-                }else{
-                    toastOrEgg(
-                        "사용자 정보를 불러오는데 오류가 발생했습니다",
-                        0,
-                        R.color.black,
-                        R.color.white,
-                        R.drawable.warning
-                    )
-                }
+                shareViewModel.startGetUserInfo()
+                toastOrEgg(
+                    "잠시만 기다려주세요",
+                    0,
+                    R.color.black,
+                    R.color.white,
+                    R.drawable.check
+                )
+
+
+                Handler().postDelayed(
+                    {
+                        val intent = Intent(this, FragmentMaInActivity::class.java)
+                        startActivity(intent)
+                    },
+                    2500
+                )
 
             }
         }

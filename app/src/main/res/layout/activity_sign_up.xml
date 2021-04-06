@@ -24,10 +24,9 @@
         android:id="@+id/app_name1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:transitionName="logoTransition"
         android:layout_below="@+id/upToolBar"
-        android:layout_above="@+id/sign_up_info"
         android:fontFamily="@font/samliphopangcheoutline"
         android:gravity="center"
         android:text="회원가입"
@@ -38,10 +37,11 @@
         android:id="@+id/sign_up_info"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/app_name1"
         android:orientation="vertical">
-        <!--        이름-->
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -230,7 +230,9 @@
         android:id="@+id/sign_up_btn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/login_sign_up_btn"
         android:clickable="true"
         android:focusable="true"
@@ -240,10 +242,7 @@
         android:padding="10dp"
         android:text="@string/sign_up"
         android:textColor="@color/login_txt"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
         android:textSize="15dp"
-        android:transitionName="signUp"
-        />
+        android:transitionName="signUp" />
 
 </RelativeLayout>

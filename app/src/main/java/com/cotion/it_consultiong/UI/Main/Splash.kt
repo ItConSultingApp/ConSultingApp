@@ -66,7 +66,6 @@ class Splash : AppCompatActivity() {
 
                     Handler().postDelayed(
                         {
-
                             val intent = Intent(this, FragmentMaInActivity::class.java)
                             startActivity(intent)
                         },

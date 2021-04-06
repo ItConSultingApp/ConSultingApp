@@ -46,7 +46,7 @@ class BoardPostDrawUpFragment : Fragment() {
 
         _binding = FragmentBoardPostDrawUpBinding.inflate(inflater, container, false)
 
-
+        binding.postName.text = userName
         binding.postUpload.setOnClickListener {
             if (!TextUtils.isEmpty(binding.postTxt.text.toString().trim { it <= ' ' })) {
                 postInfo()
@@ -68,6 +68,7 @@ class BoardPostDrawUpFragment : Fragment() {
             "job" to userJob,
             "profile" to userProfile.toString(),
             "when" to dateFormat,
+            "title" to binding.title.text.toString(),
             "contents" to binding.postTxt.text.toString()
         )
 

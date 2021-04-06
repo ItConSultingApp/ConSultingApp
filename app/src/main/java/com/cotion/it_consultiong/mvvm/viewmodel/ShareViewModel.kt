@@ -105,13 +105,10 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
     @InternalCoroutinesApi
     fun startGetUserInfo(){
         val auth = FirebaseAuth.getInstance()
-        Log.d("증명","uid : ${auth.currentUser?.uid}")
-        Toast.makeText(App.instance,"${auth.currentUser?.uid}",Toast.LENGTH_SHORT).show()
+//        Toast.makeText(App.instance,"${auth.currentUser?.uid}",Toast.LENGTH_SHORT).show()
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val post = auth.currentUser?.uid?.let { dataSnapshot.child("users").child(it).getValue(signInUserInfo::class.java) }
-
-                Log.d("증명","post name : ${post?.userName}")
                 Splash.userName = post?.userName
                 Splash.userGrade = post?.userGrade
                 Splash.userClass = post?.userClass
@@ -119,17 +116,11 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
                 Splash.userEmail = post?.userEmail
                 Splash.userPassword = post?.userPassword
                 Splash.userJob = post?.userJob
-                Log.d("리그", post?.userClass.toString())
-                Log.d("증명","onDataChange 여기야")
             }
             override fun onCancelled(databaseError: DatabaseError) {
-                Log.d("증명","$databaseError")
             }
         }
         Splash.database.addListenerForSingleValueEvent (postListener)
 
     }
-
-
 }
-
