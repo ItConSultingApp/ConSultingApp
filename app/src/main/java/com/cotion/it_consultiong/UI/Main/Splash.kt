@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.FragmentMainActivity
 import com.cotion.it_consultiong.UI.LoginMainActivity
 import com.cotion.it_consultiong.UI.LoginMainActivity.Companion.AUTHTAG
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
@@ -20,20 +20,20 @@ import kotlinx.coroutines.InternalCoroutinesApi
 
 class Splash : AppCompatActivity() {
 
-    companion object{
-        lateinit var auth : FirebaseAuth
+    companion object {
+        lateinit var auth: FirebaseAuth
         val database = FirebaseDatabase.getInstance().reference
         lateinit var uid: String
 
         //로그인된 유저 정보
-        var userName: String?= null
+        var userName: String? = null
         var userEmail: String? = null
         var userPassword: String? = null
-        var userGrade: String?= null
-        var userClass: String?= null
-        var userNumber: String?= null
-        var userJob: String?= null
-        var userProfile: Uri?= null
+        var userGrade: String? = null
+        var userClass: String? = null
+        var userNumber: String? = null
+        var userJob: String? = null
+        var userProfile: Uri? = null
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,44 +47,40 @@ class Splash : AppCompatActivity() {
     @InternalCoroutinesApi
     override fun onStart() {
         super.onStart()
-        val auth :FirebaseAuth = FirebaseAuth.getInstance()
-        Log.d("증명","$auth")
-                if (auth.currentUser == null){
-                    Handler().postDelayed(
-                        {
-                            goNext(false)
-                        },
-                        1500
-                    )
+        val auth: FirebaseAuth = FirebaseAuth.getInstance()
+        Log.d("증명", "$auth")
+        if (auth.currentUser == null) {
+            Handler().postDelayed(
+                {
+                    goNext(false)
+                },
+                1500
+            )
 
-                }else{
-                    val shareViewModel = ShareViewModel(application)
-                    shareViewModel.startGetUserInfo()
-                    Log.d("aa","입력받은 유저 name : $userName")
+        } else {
+            val shareViewModel = ShareViewModel(application)
+            shareViewModel.startGetUserInfo()
+            Log.d("aa", "입력받은 유저 name : $userName")
 
-
-
-                    Handler().postDelayed(
-                        {
-
-                            val intent = Intent(this, FragmentMaInActivity::class.java)
-                            startActivity(intent)
-                        },
-                        2500
-                    )
-                }
+            Handler().postDelayed(
+                {
+                    val intent = Intent(this, LoginMainActivity::class.java)
+                    startActivity(intent)
+                },
+                2500
+            )
+        }
 
     }
 
 
-
     @InternalCoroutinesApi
-    private fun goNext(new:Boolean){
-        if(new){
-            val intent = Intent(this,FragmentMaInActivity::class.java)
+    private fun goNext(new: Boolean) {
+        if (new) {
+            val intent = Intent(this, FragmentMainActivity::class.java)
             startActivity(intent)
-        }else{
-            val intent = Intent(this,LoginMainActivity::class.java)
+        } else {
+            val intent = Intent(this, LoginMainActivity::class.java)
             startActivity(intent)
         }
 
