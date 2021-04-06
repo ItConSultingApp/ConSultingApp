@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.FragmentMaInActivity">
+        <activity android:name=".UI.FragmentMainActivity">
 
         </activity>
         <activity android:name=".UI.Sign.SignInActivity">
@@ -26,7 +26,6 @@
         </activity>
         <activity android:name=".UI.LoginMainActivity" /> <!-- <activity android:name=".UI.FragmentMaInActivity"/> -->
         <activity android:name=".UI.Sign.SignUpActivity" />
-        <activity android:name=".UI.Main.BoardPostDrawUp" />
     </application>
 
 </manifest>
