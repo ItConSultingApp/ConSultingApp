@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import com.cotion.it_consultiong.UI.Main.BoardFragment
+import com.cotion.it_consultiong.UI.Main.HomeFragment.Companion.TAG
 import com.example.school_cafeteria.Model.meal_model
 import com.example.school_cafeteria.Ui.RetrofitBuilder
 import retrofit2.Call
@@ -53,7 +54,7 @@ class MealViewModel(application: Application) : AndroidViewModel(application) {
                                 .replace("*", "").replace(".", "").replace("1", "").replace("2", "")
                                 .replace("3", "").replace("4", "").replace("5", "").replace("6", "")
                                 .replace("7", "").replace("8", "").replace("9", "").replace("0", "")
-                            Log.d(BoardFragment.TAG, "onResponse: $row")
+                            Log.d(TAG, "onResponse: $row")
 
                             when (time) {
 
