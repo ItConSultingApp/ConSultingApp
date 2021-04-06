@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.FragmentMainActivity
 import com.cotion.it_consultiong.UI.Sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
@@ -245,7 +245,7 @@ class SignUpActivity : AppCompatActivity() {
         auth.currentUser?.uid.let {
             if (it != null) {
                 database.reference.child("users").child(it).setValue(signUpUserModel)
-                val intent = Intent(this, FragmentMaInActivity::class.java)
+                val intent = Intent(this, FragmentMainActivity::class.java)
                 startActivity(intent)
             }
         }
