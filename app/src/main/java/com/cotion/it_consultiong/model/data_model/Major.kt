@@ -1,6 +1,5 @@
 package com.cotion.it_consultiong.data.data_model
 
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
