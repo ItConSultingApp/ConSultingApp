@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.FragmentMainActivity
 import com.cotion.it_consultiong.UI.LoginMainActivity
 import com.cotion.it_consultiong.UI.LoginMainActivity.Companion.AUTHTAG
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
@@ -67,7 +67,7 @@ class Splash : AppCompatActivity() {
                     Handler().postDelayed(
                         {
 
-                            val intent = Intent(this, FragmentMaInActivity::class.java)
+                            val intent = Intent(this, FragmentMainActivity::class.java)
                             startActivity(intent)
                         },
                         2500
@@ -81,7 +81,7 @@ class Splash : AppCompatActivity() {
     @InternalCoroutinesApi
     private fun goNext(new:Boolean){
         if(new){
-            val intent = Intent(this,FragmentMaInActivity::class.java)
+            val intent = Intent(this,FragmentMainActivity::class.java)
             startActivity(intent)
         }else{
             val intent = Intent(this,LoginMainActivity::class.java)
