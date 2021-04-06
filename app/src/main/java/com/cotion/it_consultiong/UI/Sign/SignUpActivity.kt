@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMaInActivity
+import com.cotion.it_consultiong.UI.FragmentMainActivity
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
 import com.cotion.it_consultiong.UI.Sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
@@ -49,14 +49,7 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar!!.title = "회원가입"
 
 
-        mSignUpViewModel.getAllData.observe(this, androidx.lifecycle.Observer { data ->
-            mSharedViewModel.checkIfDatabaseEmpty(data)
-        })
 
-
-        mSignUpViewModel.getAllData.observe(this, androidx.lifecycle.Observer { data ->
-            mSharedViewModel.checkIfDatabaseEmpty(data)
-        })
 
 
         binding.signUpBtn.setOnClickListener {
@@ -257,7 +250,7 @@ class SignUpActivity : AppCompatActivity() {
                 val shareViewModel = ShareViewModel(application)
                 shareViewModel.getUserInfo()
                 if(userName!=null){
-                    val intent = Intent(this, FragmentMaInActivity::class.java)
+                    val intent = Intent(this, FragmentMainActivity::class.java)
                     startActivity(intent)
                 }else{
                     toastOrEgg(
