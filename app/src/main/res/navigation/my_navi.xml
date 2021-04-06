@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_fragment_board_navi_to_fragment_board_post_navi"
             app:destination="@id/fragment_board_post_navi" />
+        <action
+            android:id="@+id/action_fragment_board_navi_to_fragment_board_update_navi"
+            app:destination="@id/fragment_board_update_navi" />
     </fragment>
 
     <fragment
@@ -49,28 +52,33 @@
         android:label="글쓰기"
         tools:layout="@layout/fragment_board_post_draw_up">
 
+
         <action
             android:id="@+id/action_fragment_board_post_navi_to_fragment_board_navi"
             app:destination="@id/fragment_board_navi"
             app:enterAnim="@anim/from_right"
-<<<<<<< HEAD
             app:exitAnim="@anim/to_left" />
-        <argument android:name="currentItem"
-            app:argType="com.cotion.it_consultiong.model.recycler_model.BoardData" />
-
-
-=======
-            app:exitAnim="@anim/to_left"
-            app:popUpTo="@id/fragment_board_navi"
-            app:popUpToInclusive="true" />
->>>>>>> aed244012055c48ca335f17593cd8cade4cb41d8
     </fragment>
     <fragment
         android:id="@+id/fragment_profile_navi"
         android:name="com.cotion.it_consultiong.UI.Main.MealFragment"
         android:label="식사 ?"
-        tools:layout="@layout/fragment_meal">
+        tools:layout="@layout/fragment_meal" />
 
+    <fragment
+        android:id="@+id/fragment_board_update_navi"
+        android:name="com.cotion.it_consultiong.UI.Main.BoardPostUpdateFragment"
+        android:label="게시판 수정"
+        tools:layout="@layout/fragment_update_board">
+        <action
+            android:id="@+id/action_fragment_board_update_navi_to_fragment_board_navi"
+            app:destination="@id/fragment_board_navi"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
 
+        <argument
+            android:name="currentItem"
+            app:argType="com.cotion.it_consultiong.model.recycler_model.BoardData" />
     </fragment>
+
 </navigation>
