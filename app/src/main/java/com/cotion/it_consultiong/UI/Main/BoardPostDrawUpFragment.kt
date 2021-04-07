@@ -1,22 +1,19 @@
 package com.cotion.it_consultiong.UI.Main
 
-import android.R
-import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.cotion.it_consultiong.UI.FragmentMainActivity
 import com.cotion.it_consultiong.UI.Main.HomeFragment.Companion.TAG
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userJob
-import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
 import com.cotion.it_consultiong.databinding.FragmentBoardPostDrawUpBinding
 import com.cotion.it_consultiong.model.recycler_model.BoardData
+import com.cotion.it_consultiong.mvvm.viewmodel.MealViewModel
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -37,6 +34,8 @@ class BoardPostDrawUpFragment : Fragment() {
     private val uid = auth.currentUser?.uid // null
     private val currentDateTime = Calendar.getInstance().time
     private lateinit var dateFormat: String
+
+    private val mealViewModel: MealViewModel by viewModels()
 
     private lateinit var boardData: BoardData
 
@@ -61,13 +60,16 @@ class BoardPostDrawUpFragment : Fragment() {
 
     private fun postInfo() {
         dateFormat = SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
+        val day = mealViewModel.formatted_custon_board
 
+
+        Log.d(TAG, "day: $day")
         boardData = BoardData(
             binding.postTxt.text.toString(),
             userJob.toString(),
-            userName,
-            "",
-            dateFormat
+            binding.postName.text.toString(),
+            binding.postTitle.text.toString(),
+            day
         )
 
 
