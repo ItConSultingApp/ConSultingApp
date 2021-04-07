@@ -10,7 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.cotion.it_consultiong.UI.FragmentMainActivity
 import com.cotion.it_consultiong.UI.Main.HomeFragment.Companion.TAG
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userJob
@@ -18,6 +20,7 @@ import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
 import com.cotion.it_consultiong.databinding.FragmentBoardPostDrawUpBinding
 import com.cotion.it_consultiong.databinding.FragmentUpdateBoardBinding
 import com.cotion.it_consultiong.model.recycler_model.BoardData
+import com.cotion.it_consultiong.mvvm.viewmodel.MealViewModel
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -29,16 +32,18 @@ import java.util.*
 class BoardPostUpdateFragment : Fragment() {
     private var _binding: FragmentUpdateBoardBinding? = null
     private val binding get() = _binding!!
+    private val args by navArgs<BoardPostUpdateFragmentArgs>()
     private val db = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
+    private val mealViewModel: MealViewModel by viewModels()
 
     //나중에 앞쪽에서 전역변수등으로 선언하기
     val objectClass = ObjectClass()
     val bundle = Bundle()
     private val uid = auth.currentUser?.uid // null
     private val currentDateTime = Calendar.getInstance().time
-    private lateinit var dateFormat: String
 
+    private lateinit var dateFormat: String
     private lateinit var boardData: BoardData
 
     override fun onCreateView(
@@ -47,7 +52,9 @@ class BoardPostUpdateFragment : Fragment() {
     ): View {
 
         _binding = FragmentUpdateBoardBinding.inflate(inflater, container, false)
-
+        binding.postCurrentTxt.setText(args.currentItem.contents)
+        binding.postCurrentName.text = args.currentItem.name
+        binding.postCurrentTitle.setText(args.currentItem.title)
 
         binding.postCurrentUpload.setOnClickListener {
             if (!TextUtils.isEmpty(binding.postCurrentTxt.text.toString().trim { it <= ' ' })) {
@@ -62,13 +69,13 @@ class BoardPostUpdateFragment : Fragment() {
 
     private fun postInfo() {
         dateFormat = SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
-
+        val day = mealViewModel.formatted_custon_board
         boardData = BoardData(
             binding.postCurrentTxt.text.toString(),
             userJob.toString(),
             userName,
             "",
-            dateFormat
+            day
         )
 
 
@@ -78,8 +85,7 @@ class BoardPostUpdateFragment : Fragment() {
 
             .addOnSuccessListener {
                 objectClass.showToast(requireContext(), "게시글 올리기 성공")
-                Log.d(TAG, "postInfo: $boardData ")
-
+                Log.d(TAG, "postInfoUpdate: $boardData ")
                 findNavController().navigate(com.cotion.it_consultiong.R.id.action_fragment_board_post_navi_to_fragment_board_navi)
             }
             .addOnFailureListener {
