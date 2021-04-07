@@ -24,9 +24,11 @@ class MealViewModel(application: Application) : AndroidViewModel(application) {
 
     val current = LocalDateTime.now()
     val formatter = DateTimeFormatter.ofPattern("YYYYMMdd")
-    val formatter_custon = DateTimeFormatter.ofPattern("YYYY-MM-dd") //text 에 보여질거
+    val formatter_custom = DateTimeFormatter.ofPattern("YYYY-MM-dd") //text 에 보여질거
+    val formatter_custom_board = DateTimeFormatter.ofPattern("YYYY\nMM-dd") //text 에 보여질거
     val formatted = current.format(formatter)
-    val formatted_custon = current.format(formatter_custon)
+    val formatted_custon = current.format(formatter_custom)
+    val formatted_custon_board = current.format(formatter_custom_board)
 
 
     fun Retrofit(time: Int, meal: TextView) {
