@@ -50,6 +50,16 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <EditText
+                android:id="@+id/post_current_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="제목을 입력해 주세요"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="20dp"
+                />
 
             <EditText
                 android:id="@+id/post_current_txt"
