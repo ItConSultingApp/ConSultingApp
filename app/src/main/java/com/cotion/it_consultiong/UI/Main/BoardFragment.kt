@@ -34,6 +34,7 @@ class BoardFragment : Fragment() {
         recyclerView.adapter = board_adapter //adapter 연결
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
         recyclerView.setHasFixedSize(true)
 
 
@@ -76,7 +77,6 @@ class BoardFragment : Fragment() {
 
         override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
 
-            Log.d(HomeFragment.TAG, "onBindViewHolder: ")
 
             with(holder) {
                 binding.boardName.text = boardList[position].name //이름

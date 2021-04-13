@@ -41,7 +41,6 @@ class SignInActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.title = "로그인"
 
-
         binding.signInBtn.setOnClickListener {
             var signinEmailTxt = binding.signInId.text.toString().trim()
             var signinPasswordTxt = binding.signInPwd.text.toString().trim()
