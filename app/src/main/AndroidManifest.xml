@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.It_Consultiong">
         <activity android:name=".UI.Main.Splash">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".UI.FragmentMainActivity">
 
@@ -22,10 +25,7 @@
 
         </activity>
         <activity android:name=".UI.LoginMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".UI.Sign.SignUpActivity" />
     </application>

@@ -109,7 +109,7 @@ class SignUpActivity : AppCompatActivity() {
                                         binding.signUpEditId.text.toString()
                                     signUpUserModel.userPassword =
                                         binding.signUpPassword.text.toString()
-
+                                    signUpUserModel.userJob = binding.signUpMajor.text.toString()
                                     onSignUpSuccess()
 //                                        onSignUpSuccess()
                                 //학년, 반, 번호, 전공은 다이얼로그가 만들어지면 설정하는 코드 작성하기
@@ -117,6 +117,7 @@ class SignUpActivity : AppCompatActivity() {
 
                                 }
                                 .addOnFailureListener {
+                                    Log.i(TAG,"회원가입 오류 내용 : $it")
                                     if (it.toString() == "com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account.") {
                                         toastOrEgg(
                                             "이미 가입되어 있습니다",
@@ -125,9 +126,17 @@ class SignUpActivity : AppCompatActivity() {
                                             R.color.white,
                                             R.drawable.warning
                                         )
-                                    } else {
+                                    } else if(it.toString() == "com.google.firebase.FirebaseNetworkException: A network error (such as timeout, interrupted connection or unreachable host) has occurred.") {
                                         toastOrEgg(
-                                            "회원가입에 실패했습니다",
+                                            "네트워크가 불안정 합니다",
+                                            0,
+                                            R.color.black,
+                                            R.color.white,
+                                            R.drawable.warning
+                                        )
+                                    }else{
+                                        toastOrEgg(
+                                            "회원가입에 예기치 못한 오류가 발생했습니다",
                                             0,
                                             R.color.black,
                                             R.color.white,
