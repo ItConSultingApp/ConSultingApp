@@ -58,25 +58,32 @@ class Splash : AppCompatActivity() {
                     )
 
                 }else{
-                    val shareViewModel = ShareViewModel(application)
-                    shareViewModel.startGetUserInfo()
-                    Log.d("aa","입력받은 유저 name : $userName")
-
-
-
-                    Handler().postDelayed(
-                        {
-
-                            val intent = Intent(this, FragmentMainActivity::class.java)
-                            startActivity(intent)
-                        },
-                        2500
-                    )
+                    onSignUpSuccess()
                 }
 
     }
 
+    @InternalCoroutinesApi
+    private fun onSignUpSuccess() {
 
+
+        Handler().postDelayed(
+            {
+                val shareViewModel = ShareViewModel(application)
+
+                shareViewModel.startGetUserInfo()
+            },
+            1500
+        )
+        Handler().postDelayed(
+            {
+                val intent = Intent(this, FragmentMainActivity::class.java)
+                startActivity(intent)
+                finish()
+            },
+            3000
+        )
+    }
 
     @InternalCoroutinesApi
     private fun goNext(new:Boolean){

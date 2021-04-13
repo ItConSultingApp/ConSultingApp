@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userClass
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userGrade
+import com.cotion.it_consultiong.UI.Main.Splash.Companion.userJob
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
 import com.cotion.it_consultiong.UI.Main.Splash.Companion.userNumber
 import com.cotion.it_consultiong.data.data_model.signInUserInfo
@@ -33,9 +34,11 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        binding.userGradeClassNumber.text = user_grade_class_number
+        binding.myName.text = userName+"님의 전공은"
+        binding.myJob.text = userJob+" 입니다"
+//        binding.userGradeClassNumber.text = user_grade_class_number
 
-        binding.userName.text = userName
+//        binding.userName.text = userName
         setHasOptionsMenu(true)
 
 
