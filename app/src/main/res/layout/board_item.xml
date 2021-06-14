@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="30dp"
@@ -13,12 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
 
 
             <LinearLayout
@@ -34,11 +37,30 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:paddingTop="3dp"
                     android:text="이름"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+
+                <LinearLayout
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/board_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center|left"
+                        android:hint="제목"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/linearLayout4"
@@ -72,39 +94,26 @@
 
             </LinearLayout>
 
-            <View style="@style/board_context" />
-
-            <TextView
-                android:id="@+id/board_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:text="제목"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 style="@style/board_context"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="5dp" />
 
             <TextView
                 android:id="@+id/board_context"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-
+                android:ellipsize="end"
+                android:maxLines="3"
                 android:padding="10dp"
-                android:text="내용 시작"
+                android:text="연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습연습"
                 android:textColor="@color/black"
+                android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -132,27 +141,18 @@
                 android:text="0"
                 android:textColor="#fff" />
 
-
         </LinearLayout>
 
-        <LinearLayout
+
+        <TextView
+
+            android:id="@+id/board_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:text="2021\n3월 26일"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <TextView
-                android:id="@+id/board_day"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="2021\n3월 26일"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </LinearLayout>
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

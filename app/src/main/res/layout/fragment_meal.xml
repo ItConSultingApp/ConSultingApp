@@ -13,7 +13,9 @@
         android:clickable="false"
         android:focusable="false"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:text="날짜"
+        android:fontFamily="@font/samliphopangcheoutline"
         android:textColor="@color/black"
         android:textSize="30dp" />
 
@@ -61,6 +63,7 @@
             android:gravity="center"
             android:layout_margin="10dp"
             android:textColor="@color/black"
+            android:fontFamily="@font/tmoneyroundwindextrabold"
             android:text="식사\n\n"
             android:textSize="30dp" />
 

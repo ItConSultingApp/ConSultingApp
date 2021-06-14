@@ -3,11 +3,12 @@ package com.cotion.it_consultiong.UI.Sign
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.MenuItem
 import androidx.activity.viewModels
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMainActivity
+import com.cotion.it_consultiong.ui.FragmentMainActivity
 import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
 
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
@@ -21,13 +22,13 @@ import kotlinx.coroutines.InternalCoroutinesApi
 
 @InternalCoroutinesApi
 class SignInActivity : AppCompatActivity() {
-    lateinit var binding: ActivityEmailSignInBinding
+        lateinit var binding: ActivityEmailSignInBinding
     private val TAG = "SignInActivity"
     private val mSharedViewModel: ShareViewModel by viewModels()
     private val objectClass = ObjectClass()
     private val mSignUpViewModel: SignUpViewModel by viewModels()
     private lateinit var auth: FirebaseAuth
-    private lateinit var database: DatabaseReference
+    private lateinit var database: FirebaseDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +41,6 @@ class SignInActivity : AppCompatActivity() {
         setSupportActionBar(binding.setToolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.title = "로그인"
-
 
         binding.signInBtn.setOnClickListener {
             var signinEmailTxt = binding.signInId.text.toString().trim()
@@ -98,17 +98,11 @@ class SignInActivity : AppCompatActivity() {
             }
             //계정이 있을때
             .addOnSuccessListener {
-                toastOrEgg(
-                    "로그인 성공",
-                    0,
-                    R.color.black,
-                    R.color.white,
-                    R.drawable.check
-                )
-                val intent = Intent(this, FragmentMainActivity::class.java)
-                startActivity(intent)
-                finish()
 
+
+
+
+                onSignInSuccess()
             }
             //계정이 없을때
             .addOnFailureListener {
@@ -152,11 +146,65 @@ class SignInActivity : AppCompatActivity() {
 //            }
 //
 //            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
 //            }
 //
 //        })
     }
+
+
+    private fun onSignInSuccess() {
+
+
+        Handler().postDelayed(
+            {
+                val shareViewModel = ShareViewModel(application)
+
+                shareViewModel.startGetUserInfo()
+            },
+            1500
+        )
+        toastOrEgg(
+            "로그인 성공",
+            0,
+            R.color.black,
+            R.color.white,
+            R.drawable.check
+        )
+        Handler().postDelayed(
+            {
+                val intent = Intent(this, FragmentMainActivity::class.java)
+                startActivity(intent)
+                finish()
+            },
+            3000
+        )
+    }
+
+
+//    private fun onSignInSuccess() {
+//        database = FirebaseDatabase.getInstance()
+//        auth.currentUser?.uid.let {
+//            if (it != null) {
+//                database.reference.child("users").child(it).setValue(signUpUserModel)
+//                val shareViewModel = ShareViewModel(application)
+//                shareViewModel.getUserInfo()
+//                if(Splash.userName !=null){
+//                    val intent = Intent(this, FragmentMainActivity::class.java)
+//                    startActivity(intent)
+//                }else{
+//                    toastOrEgg(
+//                        "사용자 정보를 불러오는데 오류가 발생했습니다",
+//                        0,
+//                        R.color.black,
+//                        R.color.white,
+//                        R.drawable.warning
+//                    )
+//                }
+//
+//            }
+//        }
+//    }
+
 
 
 }

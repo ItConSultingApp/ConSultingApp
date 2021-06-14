@@ -1,25 +1,15 @@
 package com.cotion.it_consultiong.mvvm.viewmodel
 
 import android.app.Application
-import android.content.Context
 import android.text.TextUtils
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.Main.Splash
-import com.cotion.it_consultiong.UI.Main.Splash.Companion.auth
-import com.cotion.it_consultiong.UI.Main.Splash.Companion.uid
-import com.cotion.it_consultiong.UI.Sign.Dialog.App
+import com.cotion.it_consultiong.ui.SplashActivity
 import com.cotion.it_consultiong.data.data_model.signInUserInfo
 import com.cotion.it_consultiong.mvvm.models.SignUpData
-import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import kotlinx.coroutines.InternalCoroutinesApi
 
 @Suppress("UNREACHABLE_CODE")
@@ -32,8 +22,8 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
         emptyDatabase.value = signUpData.isEmpty()
     }
 
-    fun checkIfTextNull(text: String): Boolean{
-        return !TextUtils.isEmpty(text.trim {it <=' '})
+    fun checkIfTextNull(text: String): Boolean {
+        return !TextUtils.isEmpty(text.trim { it <= ' ' })
     }
 
     fun verifyDtaFromUser(
@@ -72,61 +62,40 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
-    @InternalCoroutinesApi
-    fun getUserInfo(){
-        auth = FirebaseAuth.getInstance()
-        uid = auth.currentUser?.uid.toString()
-
-        val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post = dataSnapshot.child("users").child(uid).getValue(signInUserInfo::class.java)
-                Log.d("증명","post name : ${post?.userName}")
-                Splash.userName = post?.userName
-                Splash.userGrade = post?.userGrade
-                Splash.userClass = post?.userClass
-                Splash.userNumber = post?.userNumber
-                Splash.userEmail = post?.userEmail
-                Splash.userPassword = post?.userPassword
-                Splash.userJob = post?.userJob
-                Log.d("리그", post?.userClass.toString())
-                Log.d("증명","onDataChange 여기야")
-
-            }
-            override fun onCancelled(databaseError: DatabaseError) {
-                Log.d("증명","$databaseError")
-            }
-        }
-        Splash.database.addListenerForSingleValueEvent (postListener)
-
-    }
-
-
 
     @InternalCoroutinesApi
-    fun startGetUserInfo(){
+    fun startGetUserInfo() {
         val auth = FirebaseAuth.getInstance()
-        Log.d("증명","uid : ${auth.currentUser?.uid}")
-        Toast.makeText(App.instance,"${auth.currentUser?.uid}",Toast.LENGTH_SHORT).show()
-        val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post = auth.currentUser?.uid?.let { dataSnapshot.child("users").child(it).getValue(signInUserInfo::class.java) }
+        var database: DatabaseReference = FirebaseDatabase.getInstance().reference
+        Log.d("Mylog", "my uid : ${auth.currentUser.uid}")
 
-                Log.d("증명","post name : ${post?.userName}")
-                Splash.userName = post?.userName
-                Splash.userGrade = post?.userGrade
-                Splash.userClass = post?.userClass
-                Splash.userNumber = post?.userNumber
-                Splash.userEmail = post?.userEmail
-                Splash.userPassword = post?.userPassword
-                Splash.userJob = post?.userJob
-                Log.d("리그", post?.userClass.toString())
-                Log.d("증명","onDataChange 여기야")
+        database = FirebaseDatabase.getInstance().reference
+        database.child("users").addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                val modelData = auth.currentUser?.uid?.let {
+                    snapshot.child(it).getValue(
+                        signInUserInfo::class.java
+                    )
+                }
+
+                SplashActivity.userName = modelData?.userName
+                SplashActivity.userGrade = modelData?.userGrade
+                SplashActivity.userClass = modelData?.userClass
+                SplashActivity.userNumber = modelData?.userNumber
+                SplashActivity.userEmail = modelData?.userEmail
+                SplashActivity.userPassword = modelData?.userPassword
+                SplashActivity.userJob = modelData?.userJob
+
+                Log.d("Mylog", "modelData name : ${modelData?.userName}")
+
             }
-            override fun onCancelled(databaseError: DatabaseError) {
-                Log.d("증명","$databaseError")
+
+            override fun onCancelled(error: DatabaseError) {
+
             }
-        }
-        Splash.database.addListenerForSingleValueEvent (postListener)
+        })
+
 
     }
 

@@ -13,9 +13,9 @@
         android:title="게시판" />
 
     <item
-        android:id="@+id/fragment_profile_navi"
+        android:id="@+id/userFragment"
         android:icon="@drawable/ic_baseline_person_24"
-        android:title="프로필" />
+        android:title="사용자" />
 
     <item
         android:id="@+id/mSetting"

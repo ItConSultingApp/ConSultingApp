@@ -1,4 +1,4 @@
-package com.cotion.it_consultiong.UI.Main
+package com.cotion.it_consultiong.ui.main.board
 
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +9,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.Main.HomeFragment.Companion.TAG
+import com.cotion.it_consultiong.UI.Main.board.BoardFragmentDirections
+import com.cotion.it_consultiong.ui.main.HomeFragment.Companion.TAG
 import com.cotion.it_consultiong.databinding.BoardItemBinding
 import com.cotion.it_consultiong.databinding.FragmentBoardBinding
 import com.cotion.it_consultiong.model.recycler_model.BoardData
@@ -34,6 +35,7 @@ class BoardFragment : Fragment() {
         recyclerView.adapter = board_adapter //adapter 연결
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
         recyclerView.setHasFixedSize(true)
 
 
@@ -52,9 +54,11 @@ class BoardFragment : Fragment() {
                 ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     // ArrayList 비워줌
                     boardList.clear()
+                    Log.d(TAG, "dads: ")
 
                     for (snapshot in querySnapshot!!.documents) {
                         val item = snapshot.toObject(BoardData::class.java)
+                        Log.d(TAG, "$item: ")
                         boardList.add(item!!)
                     }
                     notifyDataSetChanged()
@@ -76,7 +80,6 @@ class BoardFragment : Fragment() {
 
         override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
 
-            Log.d(HomeFragment.TAG, "onBindViewHolder: ")
 
             with(holder) {
                 binding.boardName.text = boardList[position].name //이름

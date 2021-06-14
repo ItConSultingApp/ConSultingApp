@@ -1,4 +1,4 @@
-package com.cotion.it_consultiong.UI.Main
+package com.cotion.it_consultiong.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -7,18 +7,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMainActivity
 import com.cotion.it_consultiong.UI.LoginMainActivity
-import com.cotion.it_consultiong.UI.LoginMainActivity.Companion.AUTHTAG
-import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
-import com.cotion.it_consultiong.data.data_model.signInUserInfo
 import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
-import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.coroutines.InternalCoroutinesApi
 
-class Splash : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
 
     companion object{
         lateinit var auth : FirebaseAuth
@@ -50,38 +45,44 @@ class Splash : AppCompatActivity() {
         val auth :FirebaseAuth = FirebaseAuth.getInstance()
         Log.d("증명","$auth")
                 if (auth.currentUser == null){
-                    Handler().postDelayed(
-                        {
+                    Handler().postDelayed({
                             goNext(false)
                         },
                         1500
                     )
 
                 }else{
-                    val shareViewModel = ShareViewModel(application)
-                    shareViewModel.startGetUserInfo()
-                    Log.d("aa","입력받은 유저 name : $userName")
-
-
-
-                    Handler().postDelayed(
-                        {
-
-                            val intent = Intent(this, FragmentMainActivity::class.java)
-                            startActivity(intent)
-                        },
-                        2500
-                    )
+                    onSignUpSuccess()
                 }
 
     }
 
+    @InternalCoroutinesApi
+    private fun onSignUpSuccess() {
 
+
+        Handler().postDelayed(
+            {
+                val shareViewModel = ShareViewModel(application)
+
+                shareViewModel.startGetUserInfo()
+            },
+            1500
+        )
+        Handler().postDelayed(
+            {
+                val intent = Intent(this, FragmentMainActivity::class.java)
+                startActivity(intent)
+                finish()
+            },
+            3000
+        )
+    }
 
     @InternalCoroutinesApi
     private fun goNext(new:Boolean){
         if(new){
-            val intent = Intent(this,FragmentMainActivity::class.java)
+            val intent = Intent(this, FragmentMainActivity::class.java)
             startActivity(intent)
         }else{
             val intent = Intent(this,LoginMainActivity::class.java)

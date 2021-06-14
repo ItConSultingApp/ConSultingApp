@@ -2,6 +2,7 @@ package com.cotion.it_consultiong.UI.Sign
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.text.TextUtils
 import android.util.Log
 import android.view.MenuItem
@@ -11,9 +12,8 @@ import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMainActivity
-import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
-import com.cotion.it_consultiong.UI.Sign.Dialog.MajorDialog
+import com.cotion.it_consultiong.ui.FragmentMainActivity
+import com.cotion.it_consultiong.ui.sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
@@ -98,39 +98,51 @@ class SignUpActivity : AppCompatActivity() {
                             )
 
                             auth.createUserWithEmailAndPassword(emailTxt, passwordTxt)
-                                .addOnCompleteListener(this) { task ->
-                                    if (task.isSuccessful) {
-                                        Log.d(TAG, "createUserWithEmail:success")
-                                        signUpUserModel.userName =
-                                            binding.signUpName.text.toString()
-                                        signUpUserModel.userEmail =
-                                            binding.signUpEditId.text.toString()
-                                        signUpUserModel.userPassword =
-                                            binding.signUpPassword.text.toString()
+                                .addOnSuccessListener {
 
-                                        onSignUpSuccess()
-                                        //학년, 반, 번호, 전공은 다이얼로그가 만들어지면 설정하는 코드 작성하기
+                                    Log.d(TAG, "createUserWithEmail:success")
+                                    signUpUserModel.userName =
+                                        binding.signUpName.text.toString()
+                                    signUpUserModel.userEmail =
+                                        binding.signUpEditId.text.toString()
+                                    signUpUserModel.userPassword =
+                                        binding.signUpPassword.text.toString()
+                                    signUpUserModel.userJob = binding.signUpMajor.text.toString()
+                                    onSignUpSuccess()
+//                                        onSignUpSuccess()
+                                //학년, 반, 번호, 전공은 다이얼로그가 만들어지면 설정하는 코드 작성하기
 
-                                    } else {
-                                        if (task.exception.toString() == "com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account.") {
-                                            toastOrEgg(
-                                                "이미 가입되어 있습니다",
-                                                0,
-                                                R.color.black,
-                                                R.color.white,
-                                                R.drawable.warning
-                                            )
-                                        } else {
-                                            toastOrEgg(
-                                                "회원가입에 실패했습니다",
-                                                0,
-                                                R.color.black,
-                                                R.color.white,
-                                                R.drawable.warning
-                                            )
-                                        }
+
+                                }
+                                .addOnFailureListener {
+                                    Log.i(TAG,"회원가입 오류 내용 : $it")
+                                    if (it.toString() == "com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account.") {
+                                        toastOrEgg(
+                                            "이미 가입되어 있습니다",
+                                            0,
+                                            R.color.black,
+                                            R.color.white,
+                                            R.drawable.warning
+                                        )
+                                    } else if(it.toString() == "com.google.firebase.FirebaseNetworkException: A network error (such as timeout, interrupted connection or unreachable host) has occurred.") {
+                                        toastOrEgg(
+                                            "네트워크가 불안정 합니다",
+                                            0,
+                                            R.color.black,
+                                            R.color.white,
+                                            R.drawable.warning
+                                        )
+                                    }else{
+                                        toastOrEgg(
+                                            "회원가입에 예기치 못한 오류가 발생했습니다",
+                                            0,
+                                            R.color.black,
+                                            R.color.white,
+                                            R.drawable.warning
+                                        )
                                     }
                                 }
+
                         }
                     }
                 }
@@ -210,6 +222,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
@@ -244,33 +257,35 @@ class SignUpActivity : AppCompatActivity() {
 
     //회원가입 성공했을때
     private fun onSignUpSuccess() {
-        auth.currentUser?.uid.let {
-            if (it != null) {
-                database.reference.child("users").child(it).setValue(signUpUserModel)
-                val shareViewModel = ShareViewModel(application)
-                shareViewModel.getUserInfo()
-                if(userName!=null){
-                    val intent = Intent(this, FragmentMainActivity::class.java)
-                    startActivity(intent)
-                }else{
-                    toastOrEgg(
-                        "사용자 정보를 불러오는데 오류가 발생했습니다",
-                        0,
-                        R.color.black,
-                        R.color.white,
-                        R.drawable.warning
-                    )
-                }
 
-            }
-        }
+                database.reference.child("users").child(auth.currentUser.uid).setValue(signUpUserModel)
+
+
+                Handler().postDelayed(
+                    {
+                        val shareViewModel = ShareViewModel(application)
+
+                        shareViewModel.startGetUserInfo()
+                    },
+                    1500
+                )
+                Handler().postDelayed(
+                    {
+                        val intent = Intent(this, FragmentMainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    },
+                    3000
+                )
     }
+
+
 
     fun dialogShow(view: View) {
         Log.d(TAG, "SignUpActivity - dialog() called")
 
         val edit = binding.signUpMajor
-    val btn_major_choose=binding.majorBtn
+        val btn_major_choose = binding.majorBtn
 
         val majorDialog = MajorDialog(this)
 
@@ -298,7 +313,7 @@ class SignUpActivity : AppCompatActivity() {
                 var sign_up_major = binding.signUpMajor.setText(content).toString()
                 Log.d(TAG, "content : $content")
                 Log.d(TAG, "sign_up_major: $sign_up_major ")
-                btn_major_choose.text="전공 선택 완료"
+                btn_major_choose.text = "전공 선택 완료"
 
                 // 쓰기 가능
                 edit.isFocusableInTouchMode = false
