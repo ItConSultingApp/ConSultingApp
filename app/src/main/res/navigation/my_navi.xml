@@ -77,7 +77,7 @@
 
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.cotion.it_consultiong.ui.main.UserFragment"
+        android:name="com.cotion.it_consultiong.UI.Main.userInformation.UserFragment"
         android:label=""
         tools:layout="@layout/fragment_user_information">
 

@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.Main.board.BoardFragmentDirections
 import com.cotion.it_consultiong.ui.main.HomeFragment.Companion.TAG
 import com.cotion.it_consultiong.databinding.BoardItemBinding
 import com.cotion.it_consultiong.databinding.FragmentBoardBinding
