@@ -7,10 +7,9 @@ import android.util.Log
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
-import com.cotion.it_consultiong.UI.Main.BoardFragment
-import com.cotion.it_consultiong.UI.Main.HomeFragment.Companion.TAG
-import com.example.school_cafeteria.Model.meal_model
-import com.example.school_cafeteria.Ui.RetrofitBuilder
+import com.cotion.it_consultiong.ui.main.HomeFragment.Companion.TAG
+import com.cotion.it_consultiong.model.meal_model.MealModel
+import com.cotion.it_consultiong.network.RetrofitBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,22 +23,24 @@ class MealViewModel(application: Application) : AndroidViewModel(application) {
 
     val current = LocalDateTime.now()
     val formatter = DateTimeFormatter.ofPattern("YYYYMMdd")
-    val formatter_custon = DateTimeFormatter.ofPattern("YYYY-MM-dd") //text 에 보여질거
+    val formatter_custom = DateTimeFormatter.ofPattern("YYYY-MM-dd") //text 에 보여질거
+    val formatter_custom_board = DateTimeFormatter.ofPattern("YYYY\nMM-dd") //text 에 보여질거
     val formatted = current.format(formatter)
-    val formatted_custon = current.format(formatter_custon)
+    val formatted_custon = current.format(formatter_custom)
+    val formatted_custon_board = current.format(formatter_custom_board)
 
 
     fun Retrofit(time: Int, meal: TextView) {
         RetrofitBuilder.service.getInfo(MLSV_YMD = formatted, MMEAL_SC_CODE = time).enqueue(object :
-            Callback<meal_model> {
-            override fun onFailure(call: Call<meal_model>, t: Throwable) {
+            Callback<MealModel> {
+            override fun onFailure(call: Call<MealModel>, t: Throwable) {
                 t.printStackTrace()
                 Log.d(ContentValues.TAG, "MainActivity - onFailure()")
             }
 
             override fun onResponse(
-                call: Call<meal_model>,
-                response: Response<meal_model>
+                call: Call<MealModel>,
+                response: Response<MealModel>
             ) {
 
                 if (response.isSuccessful) {

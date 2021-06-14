@@ -8,8 +8,7 @@ import android.util.Log
 import android.view.MenuItem
 import androidx.activity.viewModels
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMainActivity
-import com.cotion.it_consultiong.UI.Main.Splash
+import com.cotion.it_consultiong.ui.FragmentMainActivity
 import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
 
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
@@ -23,7 +22,7 @@ import kotlinx.coroutines.InternalCoroutinesApi
 
 @InternalCoroutinesApi
 class SignInActivity : AppCompatActivity() {
-    lateinit var binding: ActivityEmailSignInBinding
+        lateinit var binding: ActivityEmailSignInBinding
     private val TAG = "SignInActivity"
     private val mSharedViewModel: ShareViewModel by viewModels()
     private val objectClass = ObjectClass()
@@ -42,7 +41,6 @@ class SignInActivity : AppCompatActivity() {
         setSupportActionBar(binding.setToolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.title = "로그인"
-
 
         binding.signInBtn.setOnClickListener {
             var signinEmailTxt = binding.signInId.text.toString().trim()

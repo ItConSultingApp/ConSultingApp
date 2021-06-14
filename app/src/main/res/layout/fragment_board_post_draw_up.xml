@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="?android:actionBarSize"
-    tools:context=".UI.Main.BoardPostDrawUpFragment">
+    tools:context=".ui.main.board.BoardPostDrawUpFragment">
 
 
     <ScrollView
@@ -29,6 +29,7 @@
                     android:layout_height="70dp"
                     android:src="@drawable/people" />
 
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -47,11 +48,14 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/post_spinner"
                         android:entries="@array/job" />
+
                 </LinearLayout>
+
+
             </LinearLayout>
 
             <EditText
-                android:id="@+id/title"
+                android:id="@+id/post_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="제목을 입력해 주세요"

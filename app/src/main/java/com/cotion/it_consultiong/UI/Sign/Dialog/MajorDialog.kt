@@ -1,4 +1,4 @@
-package com.cotion.it_consultiong.UI.Sign.Dialog
+package com.cotion.it_consultiong.ui.sign.Dialog
 
 import android.app.Dialog
 import android.content.Context

@@ -1,20 +1,13 @@
 package com.cotion.it_consultiong.mvvm.viewmodel
 
 import android.app.Application
-import android.content.Context
 import android.text.TextUtils
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.Main.Splash
-import com.cotion.it_consultiong.UI.Main.Splash.Companion.auth
-import com.cotion.it_consultiong.UI.Main.Splash.Companion.uid
-import com.cotion.it_consultiong.UI.Sign.Dialog.App
+import com.cotion.it_consultiong.ui.SplashActivity
 import com.cotion.it_consultiong.data.data_model.signInUserInfo
 import com.cotion.it_consultiong.mvvm.models.SignUpData
-import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -79,19 +72,20 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
         database = FirebaseDatabase.getInstance().reference
         database.child("users").addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+
                 val modelData = auth.currentUser?.uid?.let {
                     snapshot.child(it).getValue(
                         signInUserInfo::class.java
                     )
                 }
 
-                Splash.userName = modelData?.userName
-                Splash.userGrade = modelData?.userGrade
-                Splash.userClass = modelData?.userClass
-                Splash.userNumber = modelData?.userNumber
-                Splash.userEmail = modelData?.userEmail
-                Splash.userPassword = modelData?.userPassword
-                Splash.userJob = modelData?.userJob
+                SplashActivity.userName = modelData?.userName
+                SplashActivity.userGrade = modelData?.userGrade
+                SplashActivity.userClass = modelData?.userClass
+                SplashActivity.userNumber = modelData?.userNumber
+                SplashActivity.userEmail = modelData?.userEmail
+                SplashActivity.userPassword = modelData?.userPassword
+                SplashActivity.userJob = modelData?.userJob
 
                 Log.d("Mylog", "modelData name : ${modelData?.userName}")
 

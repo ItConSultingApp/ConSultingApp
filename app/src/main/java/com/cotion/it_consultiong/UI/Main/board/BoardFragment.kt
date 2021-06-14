@@ -1,4 +1,4 @@
-package com.cotion.it_consultiong.UI.Main
+package com.cotion.it_consultiong.ui.main.board
 
 import android.os.Bundle
 import android.util.Log
@@ -9,13 +9,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cotion.it_consultiong.R
+import com.cotion.it_consultiong.UI.Main.board.BoardFragmentDirections
+import com.cotion.it_consultiong.ui.main.HomeFragment.Companion.TAG
 import com.cotion.it_consultiong.databinding.BoardItemBinding
 import com.cotion.it_consultiong.databinding.FragmentBoardBinding
 import com.cotion.it_consultiong.model.recycler_model.BoardData
 import com.google.firebase.firestore.FirebaseFirestore
 
 class BoardFragment : Fragment() {
-    val boardList = ArrayList<BoardData>()
     private var _binding: FragmentBoardBinding? = null
     val board_adapter: BoardViewAdapter by lazy { BoardViewAdapter() }
     private val binding get() = _binding!!
@@ -34,6 +35,7 @@ class BoardFragment : Fragment() {
         recyclerView.adapter = board_adapter //adapter 연결
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
         recyclerView.setHasFixedSize(true)
 
 
@@ -52,9 +54,11 @@ class BoardFragment : Fragment() {
                 ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     // ArrayList 비워줌
                     boardList.clear()
+                    Log.d(TAG, "dads: ")
 
                     for (snapshot in querySnapshot!!.documents) {
                         val item = snapshot.toObject(BoardData::class.java)
+                        Log.d(TAG, "$item: ")
                         boardList.add(item!!)
                     }
                     notifyDataSetChanged()
@@ -76,12 +80,12 @@ class BoardFragment : Fragment() {
 
         override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
 
-            Log.d(HomeFragment.TAG, "onBindViewHolder: ")
+
             with(holder) {
                 binding.boardName.text = boardList[position].name //이름
                 binding.boardTitle.text = boardList[position].title //제목
                 binding.boardContext.text = boardList[position].contents // 내용
-                binding.boardDay.text = boardList[position].When // 내용
+                binding.boardDay.text = boardList[position].day // 날짜
 
 
                 binding.boardLayout.setOnClickListener() {
@@ -91,15 +95,19 @@ class BoardFragment : Fragment() {
                         )
                     holder.itemView.findNavController().navigate(action)
                 }
+
+                when (boardList[position].job) {
+
+
+                }
+
+
                 binding.imgBoard.setOnClickListener() {
 
                     //bottom dialog ??
 
                 }
             }
-
-//            val spinner = (android.R.id.) as Spinner
-//            val text = spinner.selectedItem.toString()
 
 
         }
