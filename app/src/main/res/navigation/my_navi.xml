@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/fragment_board_navi"
-        android:name="com.cotion.it_consultiong.UI.Main.board.BoardFragment"
+        android:name="com.cotion.it_consultiong.ui.main.board.BoardFragment"
         android:label="게시판"
         tools:layout="@layout/fragment_board">
 
@@ -46,7 +46,7 @@
 
     <fragment
         android:id="@+id/fragment_board_post_navi"
-        android:name="com.cotion.it_consultiong.UI.Main.board.BoardPostDrawUpFragment"
+        android:name="com.cotion.it_consultiong.ui.main.board.BoardPostDrawUpFragment"
         android:label="글쓰기"
         tools:layout="@layout/fragment_board_post_draw_up">
 
