@@ -1,7 +1,7 @@
-package com.example.school_cafeteria
+package com.cotion.it_consultiong.network
 
 
-import com.example.school_cafeteria.Model.meal_model
+import com.cotion.it_consultiong.model.meal_model.MealModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -23,5 +23,5 @@ interface RetrofitService {
             @Query("MMEAL_SC_CODE") MMEAL_SC_CODE: Int
 
 
-    ): Call<meal_model>
+    ): Call<MealModel>
 }

@@ -7,9 +7,9 @@ import android.util.Log
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
-import com.cotion.it_consultiong.UI.Main.HomeFragment.Companion.TAG
-import com.example.school_cafeteria.Model.meal_model
-import com.example.school_cafeteria.Ui.RetrofitBuilder
+import com.cotion.it_consultiong.ui.main.HomeFragment.Companion.TAG
+import com.cotion.it_consultiong.model.meal_model.MealModel
+import com.cotion.it_consultiong.network.RetrofitBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,15 +32,15 @@ class MealViewModel(application: Application) : AndroidViewModel(application) {
 
     fun Retrofit(time: Int, meal: TextView) {
         RetrofitBuilder.service.getInfo(MLSV_YMD = formatted, MMEAL_SC_CODE = time).enqueue(object :
-            Callback<meal_model> {
-            override fun onFailure(call: Call<meal_model>, t: Throwable) {
+            Callback<MealModel> {
+            override fun onFailure(call: Call<MealModel>, t: Throwable) {
                 t.printStackTrace()
                 Log.d(ContentValues.TAG, "MainActivity - onFailure()")
             }
 
             override fun onResponse(
-                call: Call<meal_model>,
-                response: Response<meal_model>
+                call: Call<MealModel>,
+                response: Response<MealModel>
             ) {
 
                 if (response.isSuccessful) {

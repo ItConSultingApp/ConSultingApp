@@ -1,6 +1,5 @@
-package com.example.school_cafeteria.Ui
+package com.cotion.it_consultiong.network
 
-import com.example.school_cafeteria.RetrofitService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
