@@ -12,8 +12,7 @@ import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
-import com.cotion.it_consultiong.UI.FragmentMainActivity
-import com.cotion.it_consultiong.UI.Main.Splash.Companion.userName
+import com.cotion.it_consultiong.ui.FragmentMainActivity
 import com.cotion.it_consultiong.UI.Sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
@@ -24,7 +23,6 @@ import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.InternalCoroutinesApi
-import kotlinx.coroutines.delay
 
 
 @Suppress("ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE")
