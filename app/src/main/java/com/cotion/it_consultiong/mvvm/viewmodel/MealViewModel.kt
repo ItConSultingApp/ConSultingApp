@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
-import com.cotion.it_consultiong.UI.Main.BoardFragment
 import com.cotion.it_consultiong.UI.Main.HomeFragment.Companion.TAG
 import com.example.school_cafeteria.Model.meal_model
 import com.example.school_cafeteria.Ui.RetrofitBuilder
