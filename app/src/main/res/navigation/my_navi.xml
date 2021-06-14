@@ -26,14 +26,12 @@
         <action
             android:id="@+id/action_fragment_chat_navi_to_fragment_home_navi"
             app:destination="@id/fragment_home_navi" />
-        <action
-            android:id="@+id/action_fragment_chat_navi_to_fragment_profile_navi"
-            app:destination="@id/fragment_profile_navi" />
+
     </fragment>
 
     <fragment
         android:id="@+id/fragment_board_navi"
-        android:name="com.cotion.it_consultiong.UI.Main.BoardFragment"
+        android:name="com.cotion.it_consultiong.UI.Main.board.BoardFragment"
         android:label="게시판"
         tools:layout="@layout/fragment_board">
 
@@ -48,7 +46,7 @@
 
     <fragment
         android:id="@+id/fragment_board_post_navi"
-        android:name="com.cotion.it_consultiong.UI.Main.BoardPostDrawUpFragment"
+        android:name="com.cotion.it_consultiong.UI.Main.board.BoardPostDrawUpFragment"
         android:label="글쓰기"
         tools:layout="@layout/fragment_board_post_draw_up">
 
@@ -59,15 +57,11 @@
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left" />
     </fragment>
-    <fragment
-        android:id="@+id/fragment_profile_navi"
-        android:name="com.cotion.it_consultiong.UI.Main.MealFragment"
-        android:label="식사 ?"
-        tools:layout="@layout/fragment_meal" />
+
 
     <fragment
         android:id="@+id/fragment_board_update_navi"
-        android:name="com.cotion.it_consultiong.UI.Main.BoardPostUpdateFragment"
+        android:name="com.cotion.it_consultiong.ui.main.board.BoardPostUpdateFragment"
         android:label="게시판 수정"
         tools:layout="@layout/fragment_update_board">
         <action
@@ -79,6 +73,15 @@
         <argument
             android:name="currentItem"
             app:argType="com.cotion.it_consultiong.model.recycler_model.BoardData" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.cotion.it_consultiong.ui.main.UserFragment"
+        android:label=""
+        tools:layout="@layout/fragment_user_information">
+
+
     </fragment>
 
 </navigation>
