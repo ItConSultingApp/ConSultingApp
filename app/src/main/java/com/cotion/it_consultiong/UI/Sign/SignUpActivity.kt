@@ -13,7 +13,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.ui.FragmentMainActivity
-import com.cotion.it_consultiong.UI.Sign.Dialog.MajorDialog
+import com.cotion.it_consultiong.ui.sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
