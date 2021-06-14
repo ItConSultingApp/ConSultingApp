@@ -11,7 +11,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.cotion.it_consultiong.databinding.FragmentMealBinding
-import com.cotion.it_consultiong.mvvm.viewmodel.MealViewModel
+import com.cotion.it_consultiong.mvvm.models.MealViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 class MealFragment : Fragment(), View.OnClickListener {
