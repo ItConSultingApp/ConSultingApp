@@ -9,7 +9,6 @@ import android.view.MenuItem
 import androidx.activity.viewModels
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.ui.FragmentMainActivity
-import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
 
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
@@ -22,11 +21,10 @@ import kotlinx.coroutines.InternalCoroutinesApi
 
 @InternalCoroutinesApi
 class SignInActivity : AppCompatActivity() {
-        lateinit var binding: ActivityEmailSignInBinding
+    lateinit var binding: ActivityEmailSignInBinding
     private val TAG = "SignInActivity"
     private val mSharedViewModel: ShareViewModel by viewModels()
     private val objectClass = ObjectClass()
-    private val mSignUpViewModel: SignUpViewModel by viewModels()
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
 
@@ -54,7 +52,7 @@ class SignInActivity : AppCompatActivity() {
                     R.color.white,
                     R.drawable.warning
                 )
-            }else {
+            } else {
                 if (!signinPasswordTxt.matches(Regex("^(?=.*[a-zA-Z0-9])(?=.*[a-zA-Z!@#\$%^&*])(?=.*[0-9!@#\$%^&*]).{8,15}\$"))) {
                     toastOrEgg(
                         "올바른 비밀번호 형식이 아닙니다",
@@ -63,7 +61,7 @@ class SignInActivity : AppCompatActivity() {
                         R.color.white,
                         R.drawable.warning
                     )
-                }else{
+                } else {
                     onSignInBtn()
                 }
             }
@@ -85,7 +83,10 @@ class SignInActivity : AppCompatActivity() {
 
     private fun onSignInBtn() {
 
-        auth.signInWithEmailAndPassword(binding.signInId.text.toString(), binding.signInPwd.text.toString())
+        auth.signInWithEmailAndPassword(
+            binding.signInId.text.toString(),
+            binding.signInPwd.text.toString()
+        )
             //버튼을 눌렀을때
             .addOnCompleteListener {
                 toastOrEgg(
@@ -100,8 +101,6 @@ class SignInActivity : AppCompatActivity() {
             .addOnSuccessListener {
 
 
-
-
                 onSignInSuccess()
             }
             //계정이 없을때
@@ -114,7 +113,7 @@ class SignInActivity : AppCompatActivity() {
                         R.color.white,
                         R.drawable.warning
                     )
-                }else if(it.toString() == "com.google.firebase.auth.FirebaseAuthInvalidUserException: There is no user record corresponding to this identifier. The user may have been deleted."){
+                } else if (it.toString() == "com.google.firebase.auth.FirebaseAuthInvalidUserException: There is no user record corresponding to this identifier. The user may have been deleted.") {
                     toastOrEgg(
                         "존재하지 않는 이메일입니다",
                         0,
@@ -122,7 +121,7 @@ class SignInActivity : AppCompatActivity() {
                         R.color.white,
                         R.drawable.warning
                     )
-                }else{
+                } else {
                     toastOrEgg(
                         "로그인 실패",
                         0,
@@ -204,7 +203,6 @@ class SignInActivity : AppCompatActivity() {
 //            }
 //        }
 //    }
-
 
 
 }

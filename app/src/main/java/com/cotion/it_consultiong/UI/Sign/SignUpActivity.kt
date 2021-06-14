@@ -18,7 +18,6 @@ import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
 import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
 import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
-import com.cotion.it_consultiong.mvvm.viewmodel.SignUpViewModel
 import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -33,7 +32,6 @@ class SignUpActivity : AppCompatActivity() {
     private val mSharedViewModel: ShareViewModel by viewModels()
     private val binding by lazy { ActivitySignUpBinding.inflate(layoutInflater) }
     private val objectClass = ObjectClass()
-    private val mSignUpViewModel: SignUpViewModel by viewModels()
     private lateinit var database: FirebaseDatabase
     private lateinit var auth: FirebaseAuth
     private val signUpUserModel = SignUpUserModel()

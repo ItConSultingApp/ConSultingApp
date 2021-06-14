@@ -17,4 +17,5 @@
     <color name="login_txt">#000000</color>
     <color name="pink">#EC407A</color>
     <color name="login_edittext_bottombar">#ffffff</color>
+    <color name="mypage_frame_width_color">#777777</color>
 </resources>
