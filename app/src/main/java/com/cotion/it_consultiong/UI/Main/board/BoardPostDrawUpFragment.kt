@@ -1,5 +1,6 @@
 package com.cotion.it_consultiong.ui.main.board
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -9,12 +10,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.cotion.it_consultiong.ui.main.HomeFragment.Companion.TAG
-import com.cotion.it_consultiong.ui.SplashActivity.Companion.userJob
 import com.cotion.it_consultiong.databinding.FragmentBoardPostDrawUpBinding
 import com.cotion.it_consultiong.model.recycler_model.BoardData
-import com.cotion.it_consultiong.mvvm.viewmodel.MealViewModel
-import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
+import com.cotion.it_consultiong.mvvm.models.MealViewModel
+import com.cotion.it_consultiong.mvvm.models.ObjectClass
+import com.cotion.it_consultiong.ui.SplashActivity.Companion.userJob
+
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
@@ -63,7 +64,6 @@ class BoardPostDrawUpFragment : Fragment() {
         val day = mealViewModel.formatted_custon_board
 
 
-        Log.d(TAG, "day: $day")
         boardData = BoardData(
             binding.postTxt.text.toString(),
             userJob.toString(),
