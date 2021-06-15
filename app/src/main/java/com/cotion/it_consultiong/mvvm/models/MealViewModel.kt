@@ -2,6 +2,7 @@ package com.cotion.it_consultiong.mvvm.models
 
 import android.app.Application
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.os.Build
 import android.util.Log
 import android.widget.TextView
@@ -60,7 +61,7 @@ class MealViewModel(application: Application) : AndroidViewModel(application) {
                                 .replace("*", "").replace(".", "").replace("1", "").replace("2", "")
                                 .replace("3", "").replace("4", "").replace("5", "").replace("6", "")
                                 .replace("7", "").replace("8", "").replace("9", "").replace("0", "")
-                            Log.d(HomeFragment.TAG, "onResponse: $row")
+                            Log.d(TAG, "onResponse: $row")
 
                             when (time) {
 

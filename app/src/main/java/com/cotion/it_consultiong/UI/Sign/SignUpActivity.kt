@@ -15,9 +15,9 @@ import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.ui.FragmentMainActivity
 import com.cotion.it_consultiong.ui.sign.Dialog.MajorDialog
 import com.cotion.it_consultiong.databinding.ActivitySignUpBinding
+import com.cotion.it_consultiong.mvvm.models.ObjectClass
+import com.cotion.it_consultiong.mvvm.models.ShareViewModel
 import com.cotion.it_consultiong.mvvm.models.SignUpUserModel
-import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
-import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
 import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase

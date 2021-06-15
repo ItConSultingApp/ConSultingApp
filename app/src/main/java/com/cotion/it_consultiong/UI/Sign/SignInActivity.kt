@@ -11,8 +11,8 @@ import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.ui.FragmentMainActivity
 
 import com.cotion.it_consultiong.databinding.ActivityEmailSignInBinding
-import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
-import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
+import com.cotion.it_consultiong.mvvm.models.ShareViewModel
+
 import com.fullpagedeveloper.toastegg.toastOrEgg
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -23,8 +23,6 @@ import kotlinx.coroutines.InternalCoroutinesApi
 class SignInActivity : AppCompatActivity() {
     lateinit var binding: ActivityEmailSignInBinding
     private val TAG = "SignInActivity"
-    private val mSharedViewModel: ShareViewModel by viewModels()
-    private val objectClass = ObjectClass()
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
 
