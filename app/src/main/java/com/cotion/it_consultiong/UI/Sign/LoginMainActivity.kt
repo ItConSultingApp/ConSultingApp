@@ -11,7 +11,7 @@ import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.UI.Sign.SignInActivity
 import com.cotion.it_consultiong.UI.Sign.SignUpActivity
 import com.cotion.it_consultiong.databinding.ActivityLoginMainBinding
-import com.cotion.it_consultiong.mvvm.viewmodel.ObjectClass
+import com.cotion.it_consultiong.mvvm.models.ObjectClass
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions

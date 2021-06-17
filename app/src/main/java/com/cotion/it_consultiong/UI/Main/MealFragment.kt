@@ -1,4 +1,4 @@
-package com.cotion.it_consultiong.UI.Main
+package com.cotion.it_consultiong.ui.main
 
 import android.os.Build
 import android.os.Bundle
@@ -11,14 +11,14 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.cotion.it_consultiong.databinding.FragmentMealBinding
-import com.cotion.it_consultiong.mvvm.viewmodel.MealViewModel
+import com.cotion.it_consultiong.mvvm.models.MealViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 class MealFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentMealBinding? = null
     private val binding get() = _binding!!
 
-    private val mealViewModel: MealViewModel by viewModels()
+    private val mealViewViewModel: MealViewModel by viewModels()
 
     private lateinit var breakButton: Button
     private lateinit var launchButton: Button
@@ -39,9 +39,9 @@ class MealFragment : Fragment(), View.OnClickListener {
         mealText = binding.mealText
 
 
-        mealViewModel.Retrofit(1, mealText)
+        mealViewViewModel.Retrofit(1, mealText)
 
-        binding.dayText.text = mealViewModel.formatted_custon
+        binding.dayText.text = mealViewViewModel.formatted_custon
 
         breakButton.setOnClickListener(this)
         launchButton.setOnClickListener(this)
@@ -58,9 +58,9 @@ class MealFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v) {
-            breakButton -> mealViewModel.Retrofit(1, mealText)
-            launchButton -> mealViewModel.Retrofit(2, mealText)
-            dinnerButton -> mealViewModel.Retrofit(3, mealText)
+            breakButton -> mealViewViewModel.Retrofit(1, mealText)
+            launchButton -> mealViewViewModel.Retrofit(2, mealText)
+            dinnerButton -> mealViewViewModel.Retrofit(3, mealText)
         }
     }
 

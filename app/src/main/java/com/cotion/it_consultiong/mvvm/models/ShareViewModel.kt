@@ -1,13 +1,12 @@
-package com.cotion.it_consultiong.mvvm.viewmodel
+package com.cotion.it_consultiong.mvvm.models
 
 import android.app.Application
 import android.text.TextUtils
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.cotion.it_consultiong.ui.SplashActivity
 import com.cotion.it_consultiong.data.data_model.signInUserInfo
-import com.cotion.it_consultiong.mvvm.models.SignUpData
+import com.cotion.it_consultiong.ui.SplashActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -18,9 +17,6 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
     val emptyDatabase: MutableLiveData<Boolean> = MutableLiveData(true)
 
     //데이터 있음
-    fun checkIfDatabaseEmpty(signUpData: List<SignUpData>) {
-        emptyDatabase.value = signUpData.isEmpty()
-    }
 
     fun checkIfTextNull(text: String): Boolean {
         return !TextUtils.isEmpty(text.trim { it <= ' ' })
@@ -101,4 +97,3 @@ class ShareViewModel(application: Application) : AndroidViewModel(application) {
 
 
 }
-

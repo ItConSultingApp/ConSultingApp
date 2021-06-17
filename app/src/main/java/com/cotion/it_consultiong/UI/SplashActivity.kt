@@ -8,7 +8,7 @@ import android.os.Handler
 import android.util.Log
 import com.cotion.it_consultiong.R
 import com.cotion.it_consultiong.UI.LoginMainActivity
-import com.cotion.it_consultiong.mvvm.viewmodel.ShareViewModel
+import com.cotion.it_consultiong.mvvm.models.ShareViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.coroutines.InternalCoroutinesApi

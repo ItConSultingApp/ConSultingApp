@@ -1,32 +1,38 @@
-package com.cotion.it_consultiong.mvvm.viewmodel
+package com.cotion.it_consultiong.mvvm.models
 
 import android.app.Application
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.os.Build
 import android.util.Log
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
-import com.cotion.it_consultiong.ui.main.HomeFragment.Companion.TAG
 import com.cotion.it_consultiong.model.meal_model.MealModel
 import com.cotion.it_consultiong.network.RetrofitBuilder
+import com.cotion.it_consultiong.ui.main.HomeFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-@RequiresApi(Build.VERSION_CODES.O)
-
 class MealViewModel(application: Application) : AndroidViewModel(application) {
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     val current = LocalDateTime.now()
+    @RequiresApi(Build.VERSION_CODES.O)
     val formatter = DateTimeFormatter.ofPattern("YYYYMMdd")
+    @RequiresApi(Build.VERSION_CODES.O)
     val formatter_custom = DateTimeFormatter.ofPattern("YYYY-MM-dd") //text 에 보여질거
+    @RequiresApi(Build.VERSION_CODES.O)
     val formatter_custom_board = DateTimeFormatter.ofPattern("YYYY\nMM-dd") //text 에 보여질거
+    @RequiresApi(Build.VERSION_CODES.O)
     val formatted = current.format(formatter)
+    @RequiresApi(Build.VERSION_CODES.O)
     val formatted_custon = current.format(formatter_custom)
+    @RequiresApi(Build.VERSION_CODES.O)
     val formatted_custon_board = current.format(formatter_custom_board)
 
 
